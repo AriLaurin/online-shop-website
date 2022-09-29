@@ -1,5 +1,6 @@
 const feedback = document.querySelector(".PasswordResult");
-let LoginArray = [];
+
+
 
 
 function check_form() {
@@ -7,7 +8,7 @@ function check_form() {
   const username = document.getElementById("username").value;
   const username2 = document.getElementById("username2").value;
   const feedback = document.querySelector(".feedback");
-  const AccountName = document.getElementsByClassName("createName").value;
+  const AccountName = document.getElementById("createName").value;
   const letter = /[a-z]/;
   const upper = /[A-Z]/;
   const number = /[0-9]/;
@@ -67,12 +68,12 @@ function check_form() {
       return false;
     }
   } else {
+
     feedback.textContent = "That password is valid, redirecting you to home page. . .";
     if (!feedback.classList.contains("success")) {
       feedback.classList.add("class", "success");
-      LoginArray.push(username);
       localStorage.setItem("password", username);
-      console.log(AccountName);
+      localStorage.setItem("username", AccountName);
     }
     setTimeout(function(){
       document.location.href = "index.html";
@@ -82,12 +83,13 @@ function check_form() {
   return true;
 }
 
+const LoginPass = document.getElementById("username3").value;
+
 function Login (){
-  console.log(LoginArray)
-  event.preventDefault();
-  if(LoginArray === 13){
+  e.preventDefault();
+  if(LoginPass == localStorage.getItem("password")){
     feedback.textContent = "You are logged in!"
-  }else{
-    feedback.textContet = "Invalid account"
+  }else if(LoginPass != localStorage.getItem("password")){
+    feedback.textContent = "Invalid account"
   }
 };
