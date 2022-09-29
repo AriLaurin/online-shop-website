@@ -7,6 +7,7 @@ function check_form() {
   const username = document.getElementById("username").value;
   const username2 = document.getElementById("username2").value;
   const feedback = document.querySelector(".feedback");
+  const AccountName = document.getElementsByClassName("createName").value;
   const letter = /[a-z]/;
   const upper = /[A-Z]/;
   const number = /[0-9]/;
@@ -70,6 +71,8 @@ function check_form() {
     if (!feedback.classList.contains("success")) {
       feedback.classList.add("class", "success");
       LoginArray.push(username);
+      localStorage.setItem("password", username);
+      console.log(AccountName);
     }
     setTimeout(function(){
       document.location.href = "index.html";
