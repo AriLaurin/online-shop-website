@@ -69,27 +69,35 @@ function check_form() {
     }
   } else {
 
-    feedback.textContent = "That password is valid, redirecting you to home page. . .";
+    feedback.textContent = "That password is valid, redirecting you to login page. . .";
     if (!feedback.classList.contains("success")) {
       feedback.classList.add("class", "success");
       localStorage.setItem("password", username);
       localStorage.setItem("username", AccountName);
     }
     setTimeout(function(){
-      document.location.href = "index.html";
+      document.location.href = "login.html";
     }, 3000);
   }
 
   return true;
 }
 
-const LoginPass = document.getElementById("username3").value;
+
 
 function Login (){
-  e.preventDefault();
-  if(LoginPass == localStorage.getItem("password")){
-    feedback.textContent = "You are logged in!"
-  }else if(LoginPass != localStorage.getItem("password")){
-    feedback.textContent = "Invalid account"
+  const LoginPass = document.getElementById("username3").value;
+  const LoginUsername = document.getElementById("usernameActual").value;
+  event.preventDefault();
+  if(LoginPass == localStorage.getItem("password") && LoginUsername == localStorage.getItem("username")){
+    feedback.textContent = "You are logged in! Redirecting you to home page. . ."
+
+    setTimeout(function(){
+      document.location.href = "index.html";
+    }, 3000);
+  // }else if(LoginPass != localStorage.getItem("password")){
+  //   feedback.textContent = "Invalid account"
+  }else{
+    feedback.textContent = "Invalid account";
   }
 };
