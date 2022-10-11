@@ -4,17 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/reset.css">
+    <link rel="stylesheet" href="/CSS/styles.css">
     <title>Document</title>
 </head>
 <body>
 
-    <h1>WELCOME TO THE HOMEPAGE</h1>
+    <div class="container">
+        <div class="navbar-grid">
+            <h1 id="navbar-logo">LL Clothing</h1>
 
-    <p>Haven't made an account?</p>
-    <button type="button" onclick="window.location.href='/HTML/newaccount.html'">Create an Account</button>
+            <div class="navbar-button">
+                <button type="button" class="navbar-button" onclick="window.location.href='/HTML/newaccount.html'">Create an Account</button>
+                <button type="button" class="navbar-button" onclick="window.location.href='/HTML/login.html'">Login to Account</button>
+            </div>
+        </div>
+        <div class="leftside"></div>
+        <div class="center">
+            <h1>center</h1>
+        </div>
+        <div class="rightside"></div>
+        <div class="footer"></div>
+      </div>
 
-    <p>Already have a existing account?</p>
-    <button type="button" onclick="window.location.href='/HTML/login.html'">Login to Account</button>
+    <!-- <div class="gridstyle">
+
+        <div class="navbar-grid">
+            <h1 id="navbar-logo">NAVBAR</h1>
+
+            <div class="navbar-button">
+                <button type="button" class="navbar-button" onclick="window.location.href='/HTML/newaccount.html'">Create an Account</button>
+                <button type="button" class="navbar-button" onclick="window.location.href='/HTML/login.html'">Login to Account</button>
+            </div>
+        </div>
+        <div class="leftside"></div>
+        <div class="center">
+            <h1>WELCOME TO THE HOMEPAGE</h1>
+        </div>
+        <div class="rightside"></div>
+        <div class="footer">FOOTER</div>
+
+        <!-- end of gridstyle -->
+    <!-- </div> -->
     
     <script src="/JS/script.js"></script>
 </body>

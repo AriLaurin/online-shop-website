@@ -1,8 +1,5 @@
 const feedback = document.querySelector(".PasswordResult");
 
-
-
-
 function check_form() {
   event.preventDefault();
   const password = document.getElementById("password").value;
@@ -68,14 +65,14 @@ function check_form() {
       return false;
     }
   } else {
-
-    feedback.textContent = "That password is valid, redirecting you to login page. . .";
+    feedback.textContent =
+      "That password is valid, redirecting you to login page. . .";
     if (!feedback.classList.contains("success")) {
       feedback.classList.add("class", "success");
       localStorage.setItem("password", password);
       localStorage.setItem("username", AccountName);
     }
-    setTimeout(function(){
+    setTimeout(function () {
       document.location.href = "login.html";
     }, 3000);
   }
@@ -92,21 +89,23 @@ function HidePass() {
   }
 }
 
-
-
-function Login (){
+function Login() {
   const LoginPass = document.getElementById("passwordActual").value;
   const LoginUsername = document.getElementById("usernameActual").value;
   event.preventDefault();
-  if(LoginPass == localStorage.getItem("password") && LoginUsername == localStorage.getItem("username")){
-    feedback.textContent = "You are logged in! Redirecting you to home page. . ."
+  if (
+    LoginPass == localStorage.getItem("password") &&
+    LoginUsername == localStorage.getItem("username")
+  ) {
+    feedback.textContent =
+      "You are logged in! Redirecting you to home page. . .";
 
-    setTimeout(function(){
+    setTimeout(function () {
       document.location.href = "../index.html";
     }, 3000);
-  // }else if(LoginPass != localStorage.getItem("password")){
-  //   feedback.textContent = "Invalid account"
-  }else{
+    // }else if(LoginPass != localStorage.getItem("password")){
+    //   feedback.textContent = "Invalid account"
+  } else {
     feedback.textContent = "Invalid account";
   }
-};
+}
