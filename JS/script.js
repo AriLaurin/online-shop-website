@@ -83,6 +83,15 @@ function check_form() {
   return true;
 }
 
+function HidePass() {
+  let x = document.getElementById("passwordActual");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
 
 
 function Login (){
