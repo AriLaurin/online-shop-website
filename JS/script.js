@@ -1,7 +1,8 @@
 const feedback = document.querySelector(".PasswordResult");
-let userStatus = sessionStorage.getItem("status");
-let navbarButton1 = document.getElementById("navbar-button1");
-let navbarButton2 = document.getElementById("navbar-button2");
+let userStatus = localStorage.getItem("status");
+let navbarButton1 = document.getElementsByClassName("interface-buttons1");
+let navbarButton2 = document.getElementsByClassName("interface-buttons2");
+let signoutBTN = document.querySelector(".SObtn");
 
 function check_form() {
   event.preventDefault();
@@ -100,7 +101,7 @@ function Login() {
     LoginPass == localStorage.getItem("password") &&
     LoginUsername == localStorage.getItem("username")
   ) {
-    sessionStorage.setItem('status', true);
+    localStorage.setItem('status', true);
 
     feedback.textContent =
       "You are logged in! Redirecting you to home page. . .";
@@ -115,23 +116,23 @@ function Login() {
   }
 }
 
-if(userStatus = true){ // use =! and =, this is currently not working as expected
-  
-navbarButton1.innerHTML =
- `<a id="navbar-button1" href="#" onclick="signout()">
-    <p id="navbartext1">Sign Out</p>
- </a>`;
-
- navbarButton2.innerHTML =
- `<a id="navbar-button2" href="/HTML/orders.html">
-    <p id="navbartext2">My Orders</p>
- </a>`;
-
-}
+//if(userStatus = sessionStorage.getItem("status", true)){
+ // navbarButton1[0].classList.add("loggedIn")
+//} else {
+ // navbarButton1[0].classList.remove("loggedIn")
+//}
 
 function signout(){
-  sessionStorage.setItem("status", false);
+  localStorage.setItem("status", false);
 }
 
-console.log(userStatus);
+//signoutBTN.addEventListener("click", event => {
+
+ // event.target.parentElement.classList.add("loggedIn");
+
+//})
+
+console.log("user status: ",userStatus);
+
+console.log(navbarButton1.classList)
 

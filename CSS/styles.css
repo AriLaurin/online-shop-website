@@ -66,30 +66,21 @@ hr{
       width:200px;
       height:60px;
   }
-  
-  #navbar-button2{
-      float: right;
-      padding-top: 0.2vw;
-      padding-right: 0.7vw;
-      color: white;
-      text-decoration: none;
-      font-family: Alegreya Sans SC;
-  }
 
-  #navbar-button1{
+  .navbar-button{
     float: right;
     padding-top: 0.2vw;
-    padding-right: 1vw;
+    padding-right: 0.7vw;
     color: white;
     text-decoration: none;
     font-family: Alegreya Sans SC;
-}
+  }
 
-  a#navbar-button1:hover{
+  a.navbar-button:hover{
     color:#59C9A5;
     text-decoration: underline;
   }
-  a#navbar-button2:hover{
-    color:#59C9A5;
-    text-decoration: underline;
+
+  .loggedIn{
+    display:none;
   }
