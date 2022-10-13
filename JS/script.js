@@ -97,6 +97,8 @@ function Login() {
     LoginPass == localStorage.getItem("password") &&
     LoginUsername == localStorage.getItem("username")
   ) {
+    sessionStorage.setItem('status', 'loggedIn');
+
     feedback.textContent =
       "You are logged in! Redirecting you to home page. . .";
 
@@ -108,4 +110,10 @@ function Login() {
   } else {
     feedback.textContent = "Invalid account";
   }
+}
+
+let userStatus = sessionStorage.getItem("status");
+
+if(userStatus = "loggedIn"){
+  
 }

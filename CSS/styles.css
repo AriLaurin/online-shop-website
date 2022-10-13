@@ -1,17 +1,28 @@
 .container {
     display: grid; 
     grid-template-columns: 0.1fr 2.8fr 0.1fr; 
-    grid-template-rows: 0.1fr 2.6fr 0.3fr; 
+    grid-template-rows: 0.2fr 0.1fr 2.6fr 0.3fr; 
     gap: 0px 0px; 
-    grid-template-areas: 
+    grid-template-areas:
+      "details details details" 
       "navbar-grid navbar-grid navbar-grid"
       "leftside center rightside"
       "footer footer footer"; 
 }
+
+.details{
+  grid-area: details;
+  background: #161925;
+}
+
+hr{
+  color: #59C9A5;
+  opacity: 40%;
+}
   
 .navbar-grid {
     grid-area: navbar-grid;
-    background: #161925
+    background: #161925;
   }
   
   .leftside {
@@ -37,7 +48,7 @@
   
   .footer{
       grid-area: footer;
-      background: darkslateblue;
+      background: #161925;
       color: white;
       text-align: center;
   }
@@ -51,15 +62,21 @@
   }
   
   #navbar-logo{
-      display:inline;
-      float:left;
-      padding-left: 1vw;
-      color: #72A98F;
+      padding-left:1vw;
+      width:200px;
+      height:60px;
   }
   
   .navbar-button{
       float: right;
+      padding-top: 0.1vw;
       padding-right: 1vw;
-  
+      color: white;
+      text-decoration: none;
+      font-family: Alegreya Sans SC;
+  }
 
+  a.navbar-button:hover{
+    color:#59C9A5;
+    text-decoration: underline;
   }
