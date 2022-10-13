@@ -67,16 +67,29 @@ hr{
       height:60px;
   }
   
-  .navbar-button{
+  #navbar-button2{
       float: right;
-      padding-top: 0.1vw;
-      padding-right: 1vw;
+      padding-top: 0.2vw;
+      padding-right: 0.7vw;
       color: white;
       text-decoration: none;
       font-family: Alegreya Sans SC;
   }
 
-  a.navbar-button:hover{
+  #navbar-button1{
+    float: right;
+    padding-top: 0.2vw;
+    padding-right: 1vw;
+    color: white;
+    text-decoration: none;
+    font-family: Alegreya Sans SC;
+}
+
+  a#navbar-button1:hover{
+    color:#59C9A5;
+    text-decoration: underline;
+  }
+  a#navbar-button2:hover{
     color:#59C9A5;
     text-decoration: underline;
   }

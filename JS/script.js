@@ -1,4 +1,7 @@
 const feedback = document.querySelector(".PasswordResult");
+let userStatus = sessionStorage.getItem("status");
+let navbarButton1 = document.getElementById("navbar-button1");
+let navbarButton2 = document.getElementById("navbar-button2");
 
 function check_form() {
   event.preventDefault();
@@ -97,7 +100,7 @@ function Login() {
     LoginPass == localStorage.getItem("password") &&
     LoginUsername == localStorage.getItem("username")
   ) {
-    sessionStorage.setItem('status', 'loggedIn');
+    sessionStorage.setItem('status', true);
 
     feedback.textContent =
       "You are logged in! Redirecting you to home page. . .";
@@ -112,8 +115,23 @@ function Login() {
   }
 }
 
-let userStatus = sessionStorage.getItem("status");
-
-if(userStatus = "loggedIn"){
+if(userStatus = true){ // use =! and =, this is currently not working as expected
   
+navbarButton1.innerHTML =
+ `<a id="navbar-button1" href="#" onclick="signout()">
+    <p id="navbartext1">Sign Out</p>
+ </a>`;
+
+ navbarButton2.innerHTML =
+ `<a id="navbar-button2" href="/HTML/orders.html">
+    <p id="navbartext2">My Orders</p>
+ </a>`;
+
 }
+
+function signout(){
+  sessionStorage.setItem("status", false);
+}
+
+console.log(userStatus);
+
