@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/CSS/reset.css">
     <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="stylesheet" href="/CSS/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/2a5da4ba07.js" crossorigin="anonymous"></script>
 
     <title>LLC - Fashion for all</title>
 </head>
 <body>
 
-    <div class="container">
+    <div class="gridstyle">
         <div class="details">
             <div class="interface-buttons1 loggedIn">
                 <a class="navbar-button" href="/HTML/newaccount.html">
@@ -45,31 +47,32 @@
         <div class="leftside"></div>
         <div class="center">
             <h1>center</h1>
+
+            <section class="">
+                <div class="carousel" data-carousel>
+                    <ul data-slides>
+                        <li class="slide" data-active><img src="/IMG/xmas-sales.webp" alt=""></li>
+                        <li class="slide"><img src="/IMG/LL Clothing.svg" alt=""></li>
+                        <li class="slide"><img src="/IMG/xmas-sales.webp" alt=""></li>
+                        <li class="slide"><img src="/IMG/LL Clothing.svg" alt=""></li>
+                        <li class="slide"><img src="/IMG/xmas-sales.webp" alt=""></li>
+                    </ul>
+                    <div class="container">
+                        <button class="carousel-button prev l" data-carousel-button="prev"><</button>
+                        <button class="carousel-button next r" data-carousel-button="next"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </section>
+            <!-- end of center -->
         </div>
         <div class="rightside"></div>
         <div class="footer"></div>
       </div>
 
-    <!-- <div class="gridstyle">
-
-        <div class="navbar-grid">
-            <h1 id="navbar-logo">NAVBAR</h1>
-
-            <div class="navbar-button">
-                <button type="button" class="navbar-button" onclick="window.location.href='/HTML/newaccount.html'">Create an Account</button>
-                <button type="button" class="navbar-button" onclick="window.location.href='/HTML/login.html'">Login to Account</button>
-            </div>
-        </div>
-        <div class="leftside"></div>
-        <div class="center">
-            <h1>WELCOME TO THE HOMEPAGE</h1>
-        </div>
-        <div class="rightside"></div>
-        <div class="footer">FOOTER</div>
-
-        <!-- end of gridstyle -->
-    <!-- </div> -->
+      
     
+      
     <script src="/JS/script.js"></script>
+    <script src="/JS/home.js"></script>
 </body>
 </html>
