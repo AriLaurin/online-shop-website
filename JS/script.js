@@ -1,7 +1,7 @@
 const feedback = document.querySelector(".PasswordResult");
 let userStatus = localStorage.getItem("status");
-let navbarButton1 = document.getElementsByClassName("interface-buttons1");
-let navbarButton2 = document.getElementsByClassName("interface-buttons2");
+let navbarButton1 = document.querySelector(".interface-buttons1");
+let navbarButton2 = document.querySelector(".interface-buttons2");
 let signoutBTN = document.querySelector(".SObtn");
 
 function check_form() {
@@ -126,13 +126,13 @@ function signout(){
   localStorage.setItem("status", false);
 }
 
-//signoutBTN.addEventListener("click", event => {
 
- // event.target.parentElement.classList.add("loggedIn");
 
-//})
+signoutBTN.addEventListener("click", event => {
+
+event.target.parentElement.parentElement.classList.add("loggedIn");
+navbarButton1.classList.remove("loggedIn");
+
+})
 
 console.log("user status: ",userStatus);
-
-console.log(navbarButton1.classList)
-
