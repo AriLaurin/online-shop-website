@@ -1,3 +1,5 @@
+let signoutBTN = document.querySelector(".SObtn");
+
 function signout(){
     localStorage.setItem("status", false);
   }

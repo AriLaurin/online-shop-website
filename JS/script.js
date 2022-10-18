@@ -2,7 +2,6 @@ const feedback = document.querySelector(".PasswordResult");
 let userStatus = localStorage.getItem("status");
 let navbarButton1 = document.querySelector(".interface-buttons1");
 let navbarButton2 = document.querySelector(".interface-buttons2");
-let signoutBTN = document.querySelector(".SObtn");
 
 function check_form() {
   event.preventDefault();
@@ -10,11 +9,13 @@ function check_form() {
   const password2 = document.getElementById("password2").value;
   const feedback = document.querySelector(".feedback");
   const AccountName = document.getElementById("createName").value;
-  const letter = /[a-zøæåöäë]/;
-  const upper = /[A-ZØÆÅÄËÖ]/;
+  const letter = /[a-z]/;
+  const upper = /[A-Z]/;
   const number = /[0-9]/;
   const specialChars = /\W|_/g;
-  const notAllowed = /<.*?script.*\/?>/ig;
+  const notAllowed = /.*?script.*\/?>/ig;
+  const databaseNO = /.*?database.*\/?/g;
+  const databaseNO2 = /.*?table.*\/?/g;
 
   if (
     password.length < 13 ||
@@ -23,8 +24,9 @@ function check_form() {
     !number.test(password) ||
     !upper.test(password) ||
     !specialChars.test(password)||
-    !notAllowed.test(password) ||
-    !notAllowed.test(AccountName)
+    notAllowed.test(password) ||
+    databaseNO.test(password) ||
+    databaseNO2.test(password)
   ) {
     if (password.length < 13) {
       feedback.textContent = "Make sure password is atleast 13 letters";
@@ -63,7 +65,6 @@ function check_form() {
       }
       return false;
     }
-    
     if (!specialChars.test(password)) {
       feedback.textContent =
         "Make sure password includes atleast one special character";
@@ -125,5 +126,3 @@ function Login() {
 //} else {
  // navbarButton1[0].classList.remove("loggedIn")
 //}
-
-console.log("user status: ",userStatus);

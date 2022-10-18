@@ -50,7 +50,7 @@ div.carousel {
     z-index: 2;
     color: rgba(255,255,255,0.5);
     cursor: pointer;
-    border-radius: .25rem;
+    border-radius: 10rem;
     padding: 0 .5rem;
     background-color: rgba(0,0,0,0.1);
 }
