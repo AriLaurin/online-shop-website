@@ -64,12 +64,13 @@ hr{
   #navbar-logo{
       padding-left:1vw;
       width:200px;
-      height:60px;
+      height:53px;
+      padding-bottom: 0.5vw;
   }
 
   .navbar-button{
     float: right;
-    padding-top: 0.2vw;
+    padding-top: 2vh;
     padding-right: 0.7vw;
     color: white;
     text-decoration: none;
@@ -84,3 +85,52 @@ hr{
   .loggedIn{
     display:none;
   }
+
+  .gridstyle2 {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.3fr 1.2fr 1.2fr 1.2fr 1.2fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "categories categories categories categories"
+      "list-1a list-1b list-1c list-1d"
+      "list-2a list-2b list-2c list-2d"
+      "list-3a list-3b list-3c list-3d"
+      "list-4a list-4b list-4c list-4d";
+  }
+  
+  .categories { grid-area: categories; }
+  
+  .list-1a { grid-area: list-1a; }
+  
+  .list-1b { grid-area: list-1b; }
+  
+  .list-1c { grid-area: list-1c; }
+  
+  .list-1d { grid-area: list-1d; }
+  
+  .list-2a { grid-area: list-2a; }
+  
+  .list-2b { grid-area: list-2b; }
+  
+  .list-2c { grid-area: list-2c; }
+  
+  .list-2d { grid-area: list-2d; }
+  
+  .list-3a { grid-area: list-3a; }
+  
+  .list-3b { grid-area: list-3b; }
+  
+  .list-3c { grid-area: list-3c; }
+  
+  .list-3d { grid-area: list-3d; }
+  
+  .list-4a { grid-area: list-4a; }
+  
+  .list-4b { grid-area: list-4b; }
+  
+  .list-4c { grid-area: list-4c; }
+  
+  .list-4d { grid-area: list-4d; }
+  

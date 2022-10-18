@@ -3,7 +3,8 @@
 }
 
 div.carousel {
-    height: 50vh;
+    height: 40vh;
+    overflow: hidden;
     position: relative;
 }
 
@@ -18,7 +19,7 @@ div.carousel {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    height: 100vh;
+    height: 40vh;
     inset: 0;
     opacity: 0;
     transition: 500ms opacity ease;
@@ -28,7 +29,7 @@ div.carousel {
 .slide > img {
     display: absolute;
     width: 100vw;
-    height: 50vh;
+    height: 40vh;
     object-fit: cover;
     object-position: center;
 }
