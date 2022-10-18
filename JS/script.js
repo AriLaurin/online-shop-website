@@ -10,10 +10,11 @@ function check_form() {
   const password2 = document.getElementById("password2").value;
   const feedback = document.querySelector(".feedback");
   const AccountName = document.getElementById("createName").value;
-  const letter = /[a-z]/;
-  const upper = /[A-Z]/;
+  const letter = /[a-zøæåöäë]/;
+  const upper = /[A-ZØÆÅÄËÖ]/;
   const number = /[0-9]/;
   const specialChars = /\W|_/g;
+  const notAllowed = /<.*?script.*\/?>/ig;
 
   if (
     password.length < 13 ||
@@ -21,7 +22,9 @@ function check_form() {
     !letter.test(password) ||
     !number.test(password) ||
     !upper.test(password) ||
-    !specialChars.test(password)
+    !specialChars.test(password)||
+    !notAllowed.test(password) ||
+    !notAllowed.test(AccountName)
   ) {
     if (password.length < 13) {
       feedback.textContent = "Make sure password is atleast 13 letters";
@@ -60,6 +63,7 @@ function check_form() {
       }
       return false;
     }
+    
     if (!specialChars.test(password)) {
       feedback.textContent =
         "Make sure password includes atleast one special character";
@@ -121,18 +125,5 @@ function Login() {
 //} else {
  // navbarButton1[0].classList.remove("loggedIn")
 //}
-
-function signout(){
-  localStorage.setItem("status", false);
-}
-
-
-
-signoutBTN.addEventListener("click", event => {
-
-event.target.parentElement.parentElement.classList.add("loggedIn");
-navbarButton1.classList.remove("loggedIn");
-
-})
 
 console.log("user status: ",userStatus);
