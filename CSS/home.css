@@ -32,6 +32,7 @@ div.carousel {
     height: 40vh;
     object-fit: cover;
     object-position: center;
+    z-index: 1;
 }
 
 .slide[data-active] {
@@ -52,16 +53,12 @@ div.carousel {
     cursor: pointer;
     border-radius: 10rem;
     padding: 0 .5rem;
-    background-color: rgba(0,0,0,0.1);
+    background-color: transparent
 }
 
 .carousel-button:hover, .carousel-button:focus {
     color: white;
-    background-color: rgba(0,0,0,0.2);
-}
-
-.carousel-button:focus {
-    outline: 1px solid black;
+    background-color: transparent;
 }
 
 .container {

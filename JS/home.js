@@ -1,5 +1,18 @@
 const buttons = document.querySelectorAll("[data-carousel-button]")
 
+// addEventListener("load",() => { // "load" is safe but "DOMContentLoaded" starts earlier
+//     var index = 0;
+//     const slides = document.querySelectorAll(".slides");
+//     const classHide = "slides-hidden", count = slides.length;
+//     nextSlide();
+//     function nextSlide() {
+//         slides[(index ++) % count].classList.add(classHide);
+//         slides[index % count].classList.remove(classHide);
+//         setTimeout(nextSlide, 3000);
+//     }
+// });
+
+
 buttons.forEach( button => {
     button.addEventListener("click", () => {
         const offset = button.dataset.carouselButton === "next" ? 1 : -1
@@ -15,4 +28,5 @@ buttons.forEach( button => {
         slides.children[newIndex].dataset.active = true
         delete activeSlide.dataset.active
     })
-})
+});
+
