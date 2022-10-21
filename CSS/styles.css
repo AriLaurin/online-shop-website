@@ -130,7 +130,20 @@ hr{
 }
 
 .dropdown:hover .dropdown-content {
-  display: block; 
+  display: block;
+}
+
+.product-buttons{
+  font-family: Alegreya Sans SC;
+  color:#433A3F;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 18px;
+}
+
+a.product-buttons:hover{
+  color:#59C9A5;
+  text-decoration: underline;
 }
   
   *{
