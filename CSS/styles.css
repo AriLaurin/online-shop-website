@@ -17,11 +17,30 @@
   grid-template-rows: 0.1fr; 
   gap: 0px 0px; 
   grid-template-areas: 
-    "logo products searchbar"; 
+    "logo products basket searchbar"; 
 }
 .logo { grid-area: logo; }
 .products { grid-area: products; }
 .searchbar { grid-area: searchbar; }
+
+.products{
+  grid-area: products;
+  max-width: 200px;
+}
+
+.basket{
+  grid-area: basket;
+  float: right;
+  margin-top: -19px;
+}
+
+.basketitem:hover{
+  color:#59C9A5;
+}
+
+.basketitem{
+  color:white;
+}
 
 .details{
   grid-area: details;
