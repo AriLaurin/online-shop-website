@@ -35,6 +35,7 @@
 }
 
 .basketitem:hover{
+  transition: all 0.2s ease-in-out;
   color:#59C9A5;
 }
 
@@ -43,8 +44,11 @@
 }
 
 .details{
+  /*Details, navbar and footer expand if something in center expands. How to prevent?*/
   grid-area: details;
   background: #161925;
+  /*max-height: 50px;*/
+  
 }
 
 hr{
@@ -128,6 +132,7 @@ hr{
 }
 
 #dropdown-title:hover{
+  transition: all 0.2s ease-in-out;
   color:#59C9A5;
 }
 
@@ -148,6 +153,7 @@ hr{
   z-index: 2;
 }
 
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -161,6 +167,7 @@ hr{
 }
 
 a.product-buttons:hover{
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
   color:#59C9A5;
   text-decoration: underline;
 }
@@ -228,6 +235,10 @@ a.product-buttons:hover{
     transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
   }
 
+  .section{
+    padding-top: 8vh;
+  }
+
   .gridstyle2 {  display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 0.3fr 1.2fr 1.2fr 1.2fr 1.2fr;
@@ -242,9 +253,13 @@ a.product-buttons:hover{
       "list-4a list-4b list-4c list-4d";
   }
   
-  .categories { grid-area: categories; }
+  .categories { grid-area: categories;
+    
+   }
   
-  .list-1a { grid-area: list-1a; }
+  .list-1a { 
+    grid-area: list-1a;
+  }
   
   .list-1b { grid-area: list-1b; }
   
@@ -278,5 +293,74 @@ a.product-buttons:hover{
 
   /* .slides { width: 100%; }
   .slides-hidden { display : none; } */
+
+  #hotproducts{
+    padding-top: 10vh;
+    color: white;
+    font-family: Alegreya Sans SC;
+    font-size: 30px;
+  }
+  
+  .card {
+    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    top:0px;
+    text-align: center;
+    font-family: Alegreya Sans SC;
+    font-size: 18px;
+    background-color: #161925;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    /*margin-top: -10px;*/
+    transform: translate(0, 10px);
+  }
+
+  .item-title{
+    color: white;
+  }
+  
+  .price {
+    color:#59C9A5;
+    font-size: 22px;
+    padding: 1.5vh;
+  }
+
+  .item-desc{
+    padding-bottom: 1vh;
+    color: white;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color:#59C9A5;
+    font-family: Alegreya Sans SC;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+
+  .card:hover{
+    transition: all 0.2s ease-in-out;
+    /*margin-top: -10px;*/
+    transform: translate(0, -10px);
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px;
+    
+  }
+  
+  .card button:hover {
+    color:white;
+  }
+
+  .list{
+    
+    padding: 2vh;
+  }
   
   
