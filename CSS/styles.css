@@ -1,7 +1,7 @@
 .gridstyle {
     display: grid; 
     grid-template-columns: 0.1fr 2.8fr 0.1fr; 
-    grid-template-rows: 0.2fr 0.1fr 2.6fr 0.3fr; 
+    grid-template-rows: 0.05fr 0.08fr 2.6fr 0.3fr; 
     gap: 0px 0px; 
     grid-template-areas:
       "details details details" 
@@ -31,23 +31,23 @@
 .basket{
   grid-area: basket;
   float: right;
-  margin-top: -19px;
+  margin-top: -18.8px;
 }
 
 .basketitem:hover{
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
   color:#59C9A5;
 }
 
 .basketitem{
   color:white;
+  transition: all 0.1s ease-in-out;
 }
 
 .details{
   /*Details, navbar and footer expand if something in center expands. How to prevent?*/
   grid-area: details;
   background: #161925;
-  /*max-height: 50px;*/
   
 }
 
@@ -239,57 +239,42 @@ a.product-buttons:hover{
     padding-top: 8vh;
   }
 
-  .gridstyle2 {  display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.3fr 1.2fr 1.2fr 1.2fr 1.2fr;
-    grid-auto-columns: 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "categories categories categories categories"
-      "list-1a list-1b list-1c list-1d"
-      "list-2a list-2b list-2c list-2d"
-      "list-3a list-3b list-3c list-3d"
-      "list-4a list-4b list-4c list-4d";
-  }
-  
-  .categories { grid-area: categories;
-    
-   }
-  
-  .list-1a { 
-    grid-area: list-1a;
-  }
-  
-  .list-1b { grid-area: list-1b; }
-  
-  .list-1c { grid-area: list-1c; }
-  
-  .list-1d { grid-area: list-1d; }
-  
-  .list-2a { grid-area: list-2a; }
-  
-  .list-2b { grid-area: list-2b; }
-  
-  .list-2c { grid-area: list-2c; }
-  
-  .list-2d { grid-area: list-2d; }
-  
-  .list-3a { grid-area: list-3a; }
-  
-  .list-3b { grid-area: list-3b; }
-  
-  .list-3c { grid-area: list-3c; }
-  
-  .list-3d { grid-area: list-3d; }
-  
-  .list-4a { grid-area: list-4a; }
-  
-  .list-4b { grid-area: list-4b; }
-  
-  .list-4c { grid-area: list-4c; }
-  
-  .list-4d { grid-area: list-4d; }
+  .gridstyle2 {
+  display: grid; 
+  grid-auto-columns: 1fr; 
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 0.3fr 0.2fr 1.2fr 1.2fr 0.2fr 1.2fr 0.2fr 1.2fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "categories categories categories categories"
+    "cat-1 . . ."
+    "list-1a list-1b list-1c list-1d"
+    "list-2a list-2b list-2c list-2d"
+    "cat-2 . . ."
+    "list-3a list-3b list-3c list-3d"
+    "cat-3 . . ."
+    "list-4a list-4b list-4c list-4d"; 
+}
+.categories { grid-area: categories; }
+.list-1a { grid-area: list-1a; }
+.list-1b { grid-area: list-1b; }
+.list-1c { grid-area: list-1c; }
+.list-1d { grid-area: list-1d; }
+.list-2a { grid-area: list-2a; }
+.list-2b { grid-area: list-2b; }
+.list-2c { grid-area: list-2c; }
+.list-2d { grid-area: list-2d; }
+.list-3a { grid-area: list-3a; }
+.list-3b { grid-area: list-3b; }
+.list-3c { grid-area: list-3c; }
+.list-3d { grid-area: list-3d; }
+.list-4a { grid-area: list-4a; }
+.list-4b { grid-area: list-4b; }
+.list-4c { grid-area: list-4c; }
+.list-4d { grid-area: list-4d; }
+.cat-1 { grid-area: cat-1; }
+.cat-2 { grid-area: cat-2; }
+.cat-3 { grid-area: cat-3; }
 
   /* .slides { width: 100%; }
   .slides-hidden { display : none; } */
@@ -315,6 +300,10 @@ a.product-buttons:hover{
     transition: all 0.2s ease-in-out;
     /*margin-top: -10px;*/
     transform: translate(0, 10px);
+  }
+
+  .productIMG{
+    border-radius: 10px;
   }
 
   .item-title{
@@ -359,8 +348,146 @@ a.product-buttons:hover{
   }
 
   .list{
+    padding-bottom: 5vh;
     
-    padding: 2vh;
   }
   
+  .cat-titles{
+    color: white;
+    font-family: Alegreya Sans SC;
+    font-size: 30px;
+    padding-top: 3.2vh;
+  }
+
+  #myBtnAnchor{
+    text-decoration: none;
+  }
+
+  #myBtn{
+    color: white;
+    font-family: Alegreya Sans SC;
+    text-decoration: none;
+    padding: 2vh;
+    font-size: 23px;
+  }
+
+  #myBtn:hover{
+    color:#59C9A5;
+    text-decoration: underline;
+  }
+
+  .FooterStyle{
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 0.5fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "CompanyInfo CompanyInfo UsefulLinks Contact"; 
+      
+  }
+  .CompanyInfo { grid-area: CompanyInfo; }
+  .UsefulLinks { grid-area: UsefulLinks; }
+  .Contact { grid-area: Contact; }
+
+  #LaurinLogo{
+    float: left;
+    padding-left: 1vw;
+    padding-top: 7vh;
+  }
+
+  #LLTitle{
+    float: left;
+    padding-top: 7vh;
+    padding-left: 1vw;
+    font-family: Alegreya Sans SC;
+  }
+
+  #LLInfo{
+    padding-top: 11vh;
+    padding-right: 8.4vw;
+    font-family: Alegreya Sans SC;
+    color: #59C9A5;
+    max-width: 1000px;
+  }
+
+  #UsefulLinks{
+    float: left;
+    padding-top: 7vh;
+    padding-left: 1vw;
+    font-family: Alegreya Sans SC;
+  }
+
+  #ContactInfo{
+    float: left;
+    padding-top: 7vh;
+    padding-left: 1vw;
+    font-family: Alegreya Sans SC;
+  }
+
+  .ULStyle {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 0.1fr 0.1fr 0.1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "UL-1"
+      "UL-2"
+      "UL-3"; 
+  }
+  .UL-1 { grid-area: UL-1; }
+  .UL-2 { grid-area: UL-2; }
+  .UL-3 { grid-area: UL-3; }
+
+  #ULAccount{
+    /* padding-right: 18.2vw; */
+    max-width: 126px;
+    color: white;
+    font-family: Alegreya Sans SC;
+    font-size: 18px;
+  }
+
+  .ULAAnchor{
+    text-decoration: none;
+  }
+
+  #ULAccount:hover{
+    color: #59C9A5;
+    text-decoration: underline;
+  }
+
+  #ULProduct{
+    padding-top: 1vh;
+    max-width: 126px;
+    color: white;
+    font-family: Alegreya Sans SC;
+    font-size: 18px;
+  }
+
+  #ULProduct:hover{
+    color: #59C9A5;
+    text-decoration: underline;
+  }
+
+  .CIStyle {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 0.1fr 0.1fr 0.1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "CI-1"
+      "UL-2"
+      "UL-3"; 
+  }
+  .CI-1 {
+     grid-area: CI-1;
+   }
+  .CI-2 { grid-area: CI-2; }
+  .CI-3 { grid-area: CI-3; }
+
+  #FooterEmail{
+    font-family: Alegreya Sans SC;
+  }
   
