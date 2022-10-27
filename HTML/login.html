@@ -19,6 +19,24 @@
       <p>Make a new account?</p>
     </a>
 
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyADjLKNlDR73GAQIZFRMRCbYtLVO0VtNuQ",
+        authDomain: "prototype-nettbutikk.firebaseapp.com",
+        projectId: "prototype-nettbutikk",
+        storageBucket: "prototype-nettbutikk.appspot.com",
+        messagingSenderId: "707336901165",
+        appId: "1:707336901165:web:b98ee856a75d2a1bea1ea4",
+        measurementId: "G-56EE44NH41"
+      };
+      //firebase variable is accessible from firebase.app.js
+      firebase.initializeApp(config);
+      const db = firebase.firestore();  
+    </script>
+
     <script src="../JS/script.js"></script>
   </body>
 </html>

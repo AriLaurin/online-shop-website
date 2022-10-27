@@ -2,6 +2,7 @@ const feedback = document.querySelector(".PasswordResult");
 let userStatus = localStorage.getItem("status");
 let navbarButton1 = document.querySelector(".interface-buttons1");
 let navbarButton2 = document.querySelector(".interface-buttons2");
+const form = document.querySelector("form");
 
 function check_form() {
   event.preventDefault();
@@ -76,10 +77,25 @@ function check_form() {
   } else {
     feedback.textContent =
       "That password is valid, redirecting you to login page. . .";
+    
+        // const now = new Date();
+    
+        const accountInfo = { //object
+            username: AccountName,
+            password: password, //gets the form that we are grabbing info from, which will be put in the recipe document and grab its value
+            // created_at: firebase.firestore.Timestamp.fromDate(now) // custom firebase timestamp object
+        };
+    
+        db.collection("nybruker").add(accountInfo).then(() => { //async method which will execute the recipe object
+            console.log("account added"); //dev side stuff
+        }).catch(err => {
+            console.log(err);
+        })
+    
     if (!feedback.classList.contains("success")) {
       feedback.classList.add("class", "success");
-      localStorage.setItem("password", password);
-      localStorage.setItem("username", AccountName);
+      // localStorage.setItem("password", password);
+      // localStorage.setItem("username", AccountName);
     }
     setTimeout(function () {
       document.location.href = "login.html";
@@ -102,23 +118,69 @@ function Login() {
   const LoginPass = document.getElementById("passwordActual").value;
   const LoginUsername = document.getElementById("usernameActual").value;
   event.preventDefault();
+
+  db.collection("nybruker").get().then((snapshot) => {
+    let i = 0
+    snapshot.docs.forEach(doc => {
+      let DBCounter = snapshot.docs[i].data().username;
+      ++i
+
+    });
+  }).catch((err) => {
+    console.log(err);
+  })
+
+  //reference the database    // These methods are async, so we can use .then to fire a function when the async is finished
+db.collection("nybruker").get().then((snapshot) => {//gets the specific collection
+  //  gets all the data ^        ^ how all the data looks like at the moment
+  //console.log(snapshot.docs[0].data());
+
+  //  testfunction() = snapshot.docs.forEach(doc =>{
+  //   let i = 1;
+  //   console.log(snapshot.docs[i].data().password);
+
+  // })
+  
+
+//function
+
+
+snapshot.docs.forEach(doc => { //gets all the docs
+  let DataUsername = doc.data().username;
+  let DataPassword = doc.data().password;
+  console.log(DataPassword, LoginPass == DataPassword, LoginPass, DataPassword);
+  console.log(DataUsername, LoginUsername == DataUsername);
   if (
-    LoginPass == localStorage.getItem("password") &&
-    LoginUsername == localStorage.getItem("username")
+    LoginPass === DataPassword &&
+    LoginUsername === DataUsername
+    //LoginPass == localStorage.getItem("password") &&
+    //LoginUsername == localStorage.getItem("username")
   ) {
-    localStorage.setItem('status', true);
+    // localStorage.setItem('status', true);
 
     feedback.textContent =
       "You are logged in! Redirecting you to home page. . .";
 
     setTimeout(function () {
-      document.location.href = "../index.html";
+    //  document.location.href = "../index.html";
     }, 3000);
     // }else if(LoginPass != localStorage.getItem("password")){
     //   feedback.textContent = "Invalid account"
-  } else {
+    
+  }
+  if(LoginPass !== DataPassword &&
+    LoginUsername !== DataUsername) {
     feedback.textContent = "Invalid account";
   }
+});
+
+
+
+
+// when we have the data
+}).catch((err) => {
+ console.log(err)
+});
 }
 
 //if(userStatus = sessionStorage.getItem("status", true)){

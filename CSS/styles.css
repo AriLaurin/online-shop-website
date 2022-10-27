@@ -390,24 +390,45 @@ a.product-buttons:hover{
   .UsefulLinks { grid-area: UsefulLinks; }
   .Contact { grid-area: Contact; }
 
+  .LLStyle {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 0.1fr 0.1fr 0.1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "LL-1"
+      "LL-2"
+      "LL-3"; 
+  }
+
+  .LL-1 {
+    grid-area: LL-1;
+  }
+ .LL-2 { grid-area: LL-2; }
+ .LL-3 { grid-area: LL-3; }
+
   #LaurinLogo{
+    position: relative;
     float: left;
-    padding-left: 1vw;
-    padding-top: 7vh;
+    width: 50px;
+    top:10px;
+    left: 405px;
+    /* padding-left: 1vw;
+    padding-top: 7vh; */
   }
 
   #LLTitle{
     float: left;
     padding-top: 7vh;
-    padding-left: 1vw;
+    padding-left: 16.8vw;
     font-family: Alegreya Sans SC;
   }
 
   #LLInfo{
-    padding-top: 11vh;
-    padding-right: 8.4vw;
     font-family: Alegreya Sans SC;
     color: #59C9A5;
+    padding-right: 5vw;
     max-width: 1000px;
   }
 
@@ -478,9 +499,10 @@ a.product-buttons:hover{
     gap: 0px 0px; 
     grid-template-areas: 
       "CI-1"
-      "UL-2"
-      "UL-3"; 
+      "CI-2"
+      "CI-3"; 
   }
+  
   .CI-1 {
      grid-area: CI-1;
    }
@@ -489,5 +511,8 @@ a.product-buttons:hover{
 
   #FooterEmail{
     font-family: Alegreya Sans SC;
+    float: left;
+    padding-left: 0.5vw;
   }
   
+
