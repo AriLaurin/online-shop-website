@@ -473,6 +473,10 @@ a.product-buttons:hover{
     text-decoration: none;
   }
 
+  .ULAAnchor:hover{
+    text-decoration: underline;
+  }
+
   #ULAccount:hover{
     color: #59C9A5;
     text-decoration: underline;
@@ -513,6 +517,21 @@ a.product-buttons:hover{
     font-family: Alegreya Sans SC;
     float: left;
     padding-left: 0.5vw;
+  }
+
+  #FooterPhone{
+    font-family: Alegreya Sans SC;
+    float: left;
+    padding-top: 1vh;
+    padding-left: 2.3vw;
+  }
+
+  .FooterLinks{
+    color: white;
+  }
+
+  .FooterLinks:hover{
+    color:#59C9A5;
   }
   
 
