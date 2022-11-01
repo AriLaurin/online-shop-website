@@ -3,6 +3,7 @@ let userStatus = localStorage.getItem("status");
 let navbarButton1 = document.querySelector(".interface-buttons1");
 let navbarButton2 = document.querySelector(".interface-buttons2");
 const form = document.querySelector("form");
+let isLoggedIn = false;
 
 function check_form() {
   event.preventDefault();
@@ -158,8 +159,11 @@ snapshot.docs.forEach(doc => { //gets all the docs
   ) {
     // localStorage.setItem('status', true);
 
+    isLoggedIn = true;
+
     feedback.textContent =
       "You are logged in! Redirecting you to home page. . .";
+
 
     setTimeout(function () {
     //  document.location.href = "../index.html";
@@ -168,10 +172,13 @@ snapshot.docs.forEach(doc => { //gets all the docs
     //   feedback.textContent = "Invalid account"
     
   }
-  if(LoginPass !== DataPassword &&
-    LoginUsername !== DataUsername) {
+  if(!isLoggedIn) {
     feedback.textContent = "Invalid account";
   }
+  // if(LoginPass !== DataPassword &&
+  //   LoginUsername !== DataUsername) {
+  //   feedback.textContent = "Invalid account";
+  // }
 });
 
 

@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+
 .gridstyle {
     display: grid; 
     grid-template-columns: 0.1fr 2.8fr 0.1fr; 
@@ -23,6 +27,12 @@
 .products { grid-area: products; }
 .searchbar { grid-area: searchbar; }
 
+.navbar-grid{
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
 .products{
   grid-area: products;
   max-width: 200px;
@@ -31,7 +41,7 @@
 .basket{
   grid-area: basket;
   float: right;
-  margin-top: -18.8px;
+  margin-top: -19.8px;
 }
 
 .basketitem:hover{
@@ -105,6 +115,8 @@ hr{
       padding-bottom: 0.5vw;
   }
 
+  
+
   .navbar-button{
     float: right;
     padding-top: 2vh;
@@ -129,6 +141,7 @@ hr{
   font-size: 20px;
   text-decoration: none;
   font-family: Alegreya Sans SC;
+  justify-items: center;
 }
 
 #dropdown-title:hover{
@@ -139,7 +152,7 @@ hr{
 .dropdown {
   grid-area: products;
   max-width: 140px;
-  padding-top: 1.5vh;
+  padding-top: 1.9vh;
   padding-left: 1vw;
 }
 
@@ -504,7 +517,8 @@ a.product-buttons:hover{
     grid-template-areas: 
       "CI-1"
       "CI-2"
-      "CI-3"; 
+      "CI-3"
+      "CI-4";
   }
   
   .CI-1 {
@@ -512,15 +526,14 @@ a.product-buttons:hover{
    }
   .CI-2 { grid-area: CI-2; }
   .CI-3 { grid-area: CI-3; }
+  .CI-4 { grid-area: CI-4; }
 
   #FooterEmail{
-    font-family: Alegreya Sans SC;
     float: left;
     padding-left: 0.5vw;
   }
 
   #FooterPhone{
-    font-family: Alegreya Sans SC;
     float: left;
     padding-top: 1vh;
     padding-left: 2.3vw;
@@ -528,10 +541,17 @@ a.product-buttons:hover{
 
   .FooterLinks{
     color: white;
+    font-family: Alegreya Sans SC;
   }
 
   .FooterLinks:hover{
     color:#59C9A5;
+  }
+
+  .FooterSupport{
+    float: left;
+    padding-top: 1vh;
+    padding-left: 2.32vw;
   }
   
 
