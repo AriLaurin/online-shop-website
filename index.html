@@ -17,6 +17,36 @@
 </head>
 <body>
 
+    <!-- Trigger/Open The Modal -->
+<!-- <button id="popbtn">Open Modal</button> -->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="popupGrid modal-content">
+    <div class="popup-top">
+        <span class="close">&times;</span>
+        <h1 id="pp-title">MY ORDERS</h1>
+        <hr>
+    </div>
+    <div class="popup-center">
+        <p class="pp-emptycontent">Your basket is currently empty. . .</p>
+    </div>
+    <div class="popup-footer"></div>
+    <div class="popup-left">
+        <p class="left-sale">SEASON <br> SALE</p>
+        <p class="left-save">SAVE UP TO</p>
+        <img src="./IMG/30saleoff@4x.png" class="pp-img" alt="discount"></img>
+    </div>
+  </div>
+  <!-- <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div> -->
+
+</div>
+
     <div class="gridstyle">
         <div class="details">
             <div class="interface-buttons1 loggedIn">
@@ -62,7 +92,7 @@
                       </div>
                       
                       <div class="basket">
-                        <a class="basketitem" href="">
+                        <a class="basketitem" id="popbtn" href="#">
                             <i class="fa-solid fa-basket-shopping fa-xl"></i>
                         </a>
                       </div>
