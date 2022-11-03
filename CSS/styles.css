@@ -23,7 +23,10 @@ html{
   grid-template-areas: 
     "logo products basket searchbar"; 
 }
-.logo { grid-area: logo; }
+.logo {
+   grid-area: logo; 
+   padding-top: 0.6vh;
+}
 .products { grid-area: products; }
 .searchbar { grid-area: searchbar; }
 
