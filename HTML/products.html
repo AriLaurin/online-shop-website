@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://kit.fontawesome.com/08ca2ffd93.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="../IMG/LLC Logo@4x_1.gif" type="image/gif">
+    <title>LLC - Fashion for all</title>
+</head>
+<body>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="popupGrid modal-content">
+          <div class="popup-top">
+              <span class="close">&times;</span>
+              <h1 id="pp-title">MY ORDERS</h1>
+              <hr>
+          </div>
+          <div class="popup-center">
+              <p class="pp-emptycontent">Your basket is currently empty. . .</p>
+          </div>
+          <div class="popup-footer"></div>
+          <div class="popup-left">
+              <p class="left-sale">SEASON <br> SALE</p>
+              <p class="left-save">SAVE UP TO</p>
+              <img src="../IMG/30saleoff@4x.png" class="pp-img" alt="discount"></img>
+          </div>
+        </div>
+        <!-- <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Some text in the Modal..</p>
+        </div> -->
+      
+      </div>
+      
+          <div class="gridstyle3">
+              <div class="details">
+                <div class="detailsGridstyle">
+                    <div class="details-left">
+                        <a id="returnpageBtn" href="../index.html">
+                            <p id="returnpara"><i class="fa-solid fa-house"></i> Return to home page</p>
+                        </a>
+                    </div>
+                    <div class="details-right">
+                        <div class="interface-buttons1 loggedIn">
+                            <a class="navbar-button" href="../HTML/newaccount.html">
+                                <p>Create an Account</p>
+                            </a>
+                
+                            <a href="../HTML/login.html" class="navbar-button">
+                                <p>Login to Account</p>
+                            </a>
+                        </div>
+            
+                        <div class="interface-buttons2">
+                            <a class="navbar-button" href="../HTML/account.html">
+                                <p>My Account</p>
+                            </a>
+                
+                                <a href="#" class="navbar-button SObtn" onclick="signout()">
+                                    <p>Sign Out</p>
+                                </a>
+                        </div>
+                    </div>
+                  </div>
+          </div>
+              <div class="navbar-grid">
+                  <hr>
+                  <div class="navbarGridstyle">
+                      <div class="logo"><image id="navbar-logo" src="../IMG/LLLogo@4x.png" alt=""></image></div>
+                      <div class="products">
+                          <div class="dropdown">
+                              <span id="dropdown-title">PRODUCTS</span>
+                              <div class="dropdown-content">
+                              <a class="product-buttons" onclick="getProduct()">
+                                  <p class="ProductTitle">HATS</p>
+                              </a>
+                              <a class="product-buttons" onclick="getProduct()">
+                                  <p class="ProductTitle">TOPS</p>
+                              </a>
+                              <a class="product-buttons" onclick="getProduct()">
+                                  <p class="ProductTitle">PANTS</p>
+                              </a>
+                              <a class="product-buttons" onclick="getProduct()">
+                                  <p class="ProductTitle">SHOES</p>
+                              </a>
+                              </div>
+                            </div>
+                            
+                            <div class="basket">
+                              <a class="basketitem" id="popbtn" href="#">
+                                  <i class="fa-solid fa-basket-shopping fa-xl"></i>
+                              </a>
+                            </div>
+                      </div>
+      
+      
+                      <div class="searchbar">
+                          <div class="search-box">
+                              <button class="btn-search fas fa-search">⠀</button>
+                              <input type="text" class="input-search" placeholder="Type to Search...">
+                            </div>
+                      </div>
+                    </div>
+              </div>
+              <div class="leftside"></div>
+              <div class="center">
+                <div class="productGridstyle">
+                    <div class="filter-zone"></div>
+                    <div class="product-overhead-title">
+                        <p id="POT">Browse all of our products!</p>
+                    </div>
+                    <div class="product-list"></div>
+                    <div class="category-name"></div>
+                  </div>
+                  <!-- end of center -->
+              </div>
+              <div class="rightside"></div>
+              <div class="footer">
+                  <div class="FooterStyle">
+                      <div class="CompanyInfo">
+                         
+                          <div class="LLStyle">
+                              <div class="LL-1">
+                                  <img id="LaurinLogo" src="../IMG/Laurin Limited Logo.png" alt="Logo">
+                                  <h1 id="LLTitle">Laurin Limited ™ <hr></h1>
+                              </div>
+                              <div class="LL-2">
+                                  <p id="LLInfo">Laurin Limited Clothing is owned by Laurin Limited ™ and all rights are reserved to owner company.
+                                      <br> 1111 2222 3333 MVA
+                                  </p>
+                              </div>
+                              <div class="LL-3">
+      
+                              </div>
+                          </div>
+                      </div>
+                      <div class="UsefulLinks">
+                          
+                          <div class="ULStyle">
+                              <div class="UL-1">
+                                  <h1 id="UsefulLinks">Useful Links <hr></h1>
+                              </div>
+                              <div class="UL-2">
+                                  <a class="ULAAnchor" href="#">
+                                      <p id="ULAccount">Create an Account</p>
+                                  </a>
+                              </div>
+                              <div class="UL-3">
+                                  <a class="ULAAnchor" href="#">
+                                      <p id="ULProduct">Products</p>
+                                  </a>
+                              </div>
+                            </div>
+                      </div>
+                      <div class="Contact">
+                          <div class="CIStyle">
+                              <div class="CI-1">
+                                  <h1 id="ContactInfo">Contact Information <hr></h1>
+                              </div>
+                              
+                              <div class="CI-2">
+                                  <!-- <a href="mailto:dummymail@mail.com">EMAIL: dummymail@mail.com</a> -->
+                                  <p id="FooterEmail"><a class="ULAAnchor FooterLinks" href="mailto:"><i class="fa-solid fa-envelope"></i> dummymail@mail.com</a> </p>
+                              </div>
+                              <div class="CI-3">
+                                  <p id="FooterPhone"><a class="ULAAnchor FooterLinks" href="tlf:+47"><i class="fa-solid fa-phone"></i> +47 111 22 333</a></p>
+                              </div>
+                              <div class="CI-4">
+                                  <p class="FooterSupport"><a href="" class="ULAAnchor FooterLinks"><i class="fa-solid fa-circle-info"></i> Support Site</a></p>
+                              </div>
+                            </div>
+                      </div>
+                    </div>
+              </div>
+            </div>
+
+            <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+            <script>
+              // Initialize Firebase
+              var config = {
+                apiKey: "AIzaSyADjLKNlDR73GAQIZFRMRCbYtLVO0VtNuQ",
+                authDomain: "prototype-nettbutikk.firebaseapp.com",
+                projectId: "prototype-nettbutikk",
+                storageBucket: "prototype-nettbutikk.appspot.com",
+                messagingSenderId: "707336901165",
+                appId: "1:707336901165:web:b98ee856a75d2a1bea1ea4",
+                measurementId: "G-56EE44NH41"
+              };
+              //firebase variable is accessible from firebase.app.js
+              firebase.initializeApp(config);
+              const db = firebase.firestore();  
+            </script>
+              <script src="../JS/signout.js" defer></script>
+              <script src="../JS/script.js" defer></script>
+              <script src="../JS/home.js" defer></script>
+              
+</body>
+</html>

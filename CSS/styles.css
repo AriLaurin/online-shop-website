@@ -109,7 +109,9 @@ html{
    }
 
    .pp-img{
-    
+    display: flex;
+    width: 100%;
+    padding: 20px;
    }
 
 .gridstyle {
@@ -171,6 +173,7 @@ html{
   /*Details, navbar and footer expand if something in center expands. How to prevent?*/
   grid-area: details;
   background: #161925;
+  padding-bottom: 2vh;
   
 }
 
@@ -210,6 +213,38 @@ hr{
       background: #161925;
       color: white;
       text-align: center;
+  }
+
+  .detailsGridstyle {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 0.05fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "details-left details-right"; 
+  }
+  .details-left { 
+    grid-area: details-left;
+    max-width: 200px;
+  }
+  .details-right { grid-area: details-right; }
+
+  #returnpageBtn{
+    text-decoration: none;
+    color: white;
+    font-family: Alegreya Sans SC;
+  }
+
+  #returnpara{
+    padding-top: 1.8vh;
+    padding-left: 1vw;
+    max-width: 200px;
+  }
+
+  #returnpageBtn:hover{
+    text-decoration: underline;
+    color: #59C9A5;
   }
 
   .error {
@@ -258,8 +293,10 @@ hr{
 }
 
 #dropdown-title:hover{
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
   color:#59C9A5;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .dropdown {
@@ -666,5 +703,31 @@ a.product-buttons:hover{
     padding-top: 1vh;
     padding-left: 2.32vw;
   }
-  
 
+  .gridstyle3 {
+    display: grid; 
+    grid-template-columns: 0.1fr 2.8fr 0.1fr; 
+    grid-template-rows: 0.05fr 0.08fr 2.6fr 0.3fr; 
+    gap: 0px 0px; 
+    grid-template-areas:
+      "details details details" 
+      "navbar-grid navbar-grid navbar-grid"
+      "center center center"
+      "footer footer footer"; 
+}
+  
+  .productGridstyle {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 0.4fr 1.6fr; 
+    grid-template-rows: 0.2fr 0.2fr 2.6fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "filter-zone product-overhead-title"
+      "filter-zone category-name"
+      "filter-zone product-list"; 
+  }
+  .filter-zone { grid-area: filter-zone; }
+  .product-overhead-title { grid-area: product-overhead-title; }
+  .product-list { grid-area: product-list; }
+  .category-name { grid-area: category-name; }

@@ -74,4 +74,60 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-} 
+};
+
+function ProductPage(){
+  document.location.href = "./HTML/products.html";
+};
+
+// addEventListener("click", e => {
+//   if (e.target.classList.contains("ProductTitle")) {
+//     console.log(e.target)
+//   }
+// });
+
+const categoryTitle = document.querySelectorAll(".ProductTitle");
+
+// console.log(categoryTitle)
+let chosenElement = '';
+for(let i of categoryTitle) {
+
+  i.addEventListener("click", () => {
+
+    // console.log("this is clicked", i.textContent.toLowerCase());
+    chosenElement = i.textContent.toLowerCase();
+  })
+
+function getProduct(){
+  console.log("wee")
+  // const categoryTitle = document.querySelector("#ProductTitle").firstChild.data.toLowerCase();
+
+  // console.log(i.textContent);
+  
+
+  db.collection(chosenElement).get().then((snapshot) => {
+    let docID = '';
+    // console.log(snapshot.docs[0].data())
+    snapshot.docs.forEach(doc => {
+      // console.log(doc.id);
+      // console.log(chosenElement)
+      console.log(doc.data().name);
+      console.log(doc.id);
+      // if(doc.data().name === chosenElement){
+      //   // console.log(doc.id);
+      //   console.log(`this is ${chosenElement}`);
+      //    docID = doc.id;
+    // }
+
+
+
+});
+// console.log(docID);
+// banan(docID);
+
+  })}};
+
+  function banan (docID) {
+    console.log(docID)
+
+  }

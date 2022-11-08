@@ -166,7 +166,7 @@ snapshot.docs.forEach(doc => { //gets all the docs
 
 
     setTimeout(function () {
-    //  document.location.href = "../index.html";
+      document.location.href = "../index.html";
     }, 3000);
     // }else if(LoginPass != localStorage.getItem("password")){
     //   feedback.textContent = "Invalid account"
