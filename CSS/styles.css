@@ -707,7 +707,7 @@ a.product-buttons:hover{
   .gridstyle3 {
     display: grid; 
     grid-template-columns: 0.1fr 2.8fr 0.1fr; 
-    grid-template-rows: 0.05fr 0.08fr 2.6fr 0.3fr; 
+    grid-template-rows: 0.02fr 0.02fr 2.2fr 0fr; 
     gap: 0px 0px; 
     grid-template-areas:
       "details details details" 
@@ -719,8 +719,8 @@ a.product-buttons:hover{
   .productGridstyle {
     display: grid; 
     grid-auto-columns: 1fr; 
-    grid-template-columns: 0.4fr 1.6fr; 
-    grid-template-rows: 0.2fr 0.2fr 2.6fr; 
+    grid-template-columns: 0.4fr 1.2fr; 
+    grid-template-rows: 0.05fr 0.03fr 2.6fr; 
     gap: 0px 0px; 
     grid-template-areas: 
       "filter-zone product-overhead-title"
@@ -731,3 +731,80 @@ a.product-buttons:hover{
   .product-overhead-title { grid-area: product-overhead-title; }
   .product-list { grid-area: product-list; }
   .category-name { grid-area: category-name; }
+
+  #PRODUCTdropdown-title{
+    grid-area: navbar-grid;
+    color:#59C9A5;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: Alegreya Sans SC;
+    justify-items: center;
+  }
+
+  #POT{
+    color: white;
+    font-family: Alegreya Sans SC;
+    font-size: 25px;
+    padding-top: 1vh;
+  }
+
+  .PcatName{
+    color:#59C9A5;
+    font-family: Alegreya Sans SC;
+    font-size: 20px;
+    padding-top: 1vh;
+    padding-bottom: 2vh;
+  }
+
+  .PLgridstyle {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    gap: 50px 0px; 
+    grid-template-areas: 
+      "hat1 hat2 hat3 hat4"
+      "hat5 hat6 hat7 hat8"
+      "tops1 tops2 tops3 tops4"
+      "tops5 tops6 tops7 tops8"
+      "pants1 pants2 pants3 pants4"
+      "pants5 pants6 pants7 pants8"
+      "shoes1 shoes2 shoes3 shoes4"
+      "shoes5 shoes6 shoes7 shoes8"; 
+  }
+  .hat1 { grid-area: hat1; }
+  .hat2 { grid-area: hat2; }
+  .hat3 { grid-area: hat3; }
+  .hat4 { grid-area: hat4; }
+  .hat5 {
+     grid-area: hat5;
+  }
+  .hat6 { 
+    grid-area: hat6;
+   }
+  .hat7 { grid-area: hat7; }
+  .hat8 { grid-area: hat8; }
+  .tops1 { grid-area: tops1; }
+  .tops2 { grid-area: tops2; }
+  .tops3 { grid-area: tops3; }
+  .tops4 { grid-area: tops4; }
+  .tops5 { grid-area: tops5; }
+  .tops6 { grid-area: tops6; }
+  .tops7 { grid-area: tops7; }
+  .tops8 { grid-area: tops8; }
+  .pants1 { grid-area: pants1; }
+  .pants2 { grid-area: pants2; }
+  .pants3 { grid-area: pants3; }
+  .pants4 { grid-area: pants4; }
+  .pants5 { grid-area: pants5; }
+  .pants6 { grid-area: pants6; }
+  .pants7 { grid-area: pants7; }
+  .pants8 { grid-area: pants8; }
+  .shoes1 { grid-area: shoes1; }
+  .shoes2 { grid-area: shoes2; }
+  .shoes3 { grid-area: shoes3; }
+  .shoes4 { grid-area: shoes4; }
+  .shoes5 { grid-area: shoes5; }
+  .shoes6 { grid-area: shoes6; }
+  .shoes7 { grid-area: shoes7; }
+  .shoes8 { grid-area: shoes8; }
