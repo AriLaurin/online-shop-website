@@ -199,6 +199,7 @@ hr{
     background: #433A3F;
     text-align: center;
     color:#59C9A5;
+
   }
   
   .rightside {
@@ -713,7 +714,13 @@ a.product-buttons:hover{
       "details details details" 
       "navbar-grid navbar-grid navbar-grid"
       "center center center"
-      "footer footer footer"; 
+      "footer2 footer2 footer2"; 
+}
+
+.footer2{
+  grid-area: footer2;
+  background: #161925;
+  padding-bottom: 5vh;
 }
   
   .productGridstyle {
@@ -727,9 +734,15 @@ a.product-buttons:hover{
       "filter-zone category-name"
       "filter-zone product-list"; 
   }
-  .filter-zone { grid-area: filter-zone; }
+  .filter-zone {
+     grid-area: filter-zone;
+     box-shadow: 1px 0px 8px black;
+     }
   .product-overhead-title { grid-area: product-overhead-title; }
-  .product-list { grid-area: product-list; }
+  .product-list {
+     grid-area: product-list;
+     padding-bottom: 2vh;
+     }
   .category-name { grid-area: category-name; }
 
   #PRODUCTdropdown-title{
@@ -753,7 +766,6 @@ a.product-buttons:hover{
     font-family: Alegreya Sans SC;
     font-size: 20px;
     padding-top: 1vh;
-    padding-bottom: 2vh;
   }
 
   .PLgridstyle {
@@ -808,3 +820,106 @@ a.product-buttons:hover{
   .shoes6 { grid-area: shoes6; }
   .shoes7 { grid-area: shoes7; }
   .shoes8 { grid-area: shoes8; }
+
+  #myBtn2{
+    color: white;
+    font-family: Alegreya Sans SC;
+    text-decoration: none;
+    padding: 2vh;
+    font-size: 23px;
+    padding-top: 5vh;
+  }
+
+  #myBtn2:hover{
+    color:#59C9A5;
+    text-decoration: underline;
+  }
+
+  .filtertitle{
+    font-family: Alegreya Sans SC;
+    color:#59C9A5;
+    padding-top: 1.5vh;
+    font-size: 20px;
+    padding-left: 1.4vw;
+  }
+
+  .filtercontainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-family: Alegreya Sans SC;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding-left: 10vw;
+    padding-top:3vh;
+    color: white;
+    padding-left: 11.2vw;
+    text-align: start;
+  }
+
+  .fuckyou:hover{
+    color:#59C9A5;
+  }
+
+  .fcACTIVE{
+    color:#59C9A5 !important;
+  }
+
+  /* Hide the browser's default checkbox */
+.filtercontainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: relative;
+  display: inline;
+}
+
+.fuckyou {
+  display: inline;
+  margin-left: 5px;
+}
+
+.filtercontainer input:checked{
+  color: #59C9A5;
+}
+
+/* On mouse-over, add a grey background color */
+.filtercontainer:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.filtercontainer input:checked ~ .checkmark {
+  background-color: #59C9A5;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Style the checkmark/indicator */
+.filtercontainer .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

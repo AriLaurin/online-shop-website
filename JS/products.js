@@ -39,14 +39,6 @@ window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-function scrollFunction2() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton2.style.display = "block";
   } else {
     mybutton2.style.display = "none";
@@ -88,6 +80,27 @@ window.onclick = function(event) {
 function ProductPage(){
   document.location.href = "./HTML/products.html";
 };
+
+addEventListener('click', (e) => {
+    console.log(e.target.parentElement.firstElementChild);
+    if (e.target.classList.contains("test23")) {
+        e.target.parentElement.firstElementChild.classList.toggle("fcACTIVE");
+        e.target.parentElement.lastElementChild.classList.toggle("fcACTIVE");
+    }
+    console.log(e.target.innerText);
+    if(e.target.innerText === "HATS") {
+        db.collection("hats").get().then((snapshot) => {
+            console.log(snapshot.docs[0].data())
+        })
+    }
+
+
+});
+
+
+
+
+
 
 // addEventListener("click", e => {
 //   if (e.target.classList.contains("ProductTitle")) {
@@ -140,3 +153,4 @@ function getProduct(){
     console.log(docID)
 
   }
+
