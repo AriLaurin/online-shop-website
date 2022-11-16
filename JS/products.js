@@ -81,7 +81,7 @@ function ProductPage(){
   document.location.href = "./HTML/products.html";
 };
 
-let hatsCat = document.getElementsByClassName("hat1");
+let hatsCat = document.getElementById("hat1");
 
 addEventListener('click', (e) => {
     // console.log(e.target.parentElement.firstElementChild);
