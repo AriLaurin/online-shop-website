@@ -923,3 +923,11 @@ a.product-buttons:hover{
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+.HATS{
+  visibility:visible;
+}
+
+.HATSHidden{
+  visibility: hidden;
+}

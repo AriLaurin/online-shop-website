@@ -81,23 +81,41 @@ function ProductPage(){
   document.location.href = "./HTML/products.html";
 };
 
+let hatsCat = document.getElementsByClassName("hat1");
+
 addEventListener('click', (e) => {
-    console.log(e.target.parentElement.firstElementChild);
+    // console.log(e.target.parentElement.firstElementChild);
     if (e.target.classList.contains("test23")) {
         e.target.parentElement.firstElementChild.classList.toggle("fcACTIVE");
         e.target.parentElement.lastElementChild.classList.toggle("fcACTIVE");
     }
+    // console.log(document.getElementsByClassName("HATS"));
+    // console.log(document.getElementsByClassName(`${e.target.innerText}`));
     console.log(e.target.innerText);
     if(e.target.innerText === "HATS") {
-        db.collection("hats").get().then((snapshot) => {
-            console.log(snapshot.docs[0].data())
-        })
+    let hatsHTML =
+      `
+      <div class="card">
+      <img src="../IMG/Artboard 5@4x.png" class="productIMG" alt="Item Picture" style="width:100%">
+      <h1 class="item-title">Item 1</h1>
+      <p class="price">$19.99</p>
+      <p class="item-desc">Item Description. . . </p>
+      <p><button>Add to Basket</button></p>
+    </div> 
+      `;
+
+
+       hatsCat.innerHTML = hatsHTML;
+
+       console.log(hatsCat);
+      
+        // db.collection("hats").get().then((snapshot) => {
+        //   //  console.log(snapshot.docs[0].data())
+        // });
     }
 
 
 });
-
-
 
 
 
