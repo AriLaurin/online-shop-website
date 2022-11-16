@@ -81,7 +81,20 @@ function ProductPage(){
   document.location.href = "./HTML/products.html";
 };
 
-let hatsCat = document.getElementById("hat1");
+let hatsCat = document.getElementById("productContainer");
+
+const addProduct = (product) => {
+  let html = `
+  <div class="card">
+  <img src="../IMG/Artboard 5@4x.png" class="productIMG" alt="Item Picture" style="width:100%">
+  <h1 class="item-title">${product.name}</h1>
+  <p class="price">£${product.price}</p>
+  <p class="item-desc">${product.item_desc}</p>
+  <p><button>Add to Basket</button></p>
+</div> 
+  `
+  hatsCat.innerHTML += html;
+}
 
 addEventListener('click', (e) => {
     // console.log(e.target.parentElement.firstElementChild);
@@ -93,26 +106,30 @@ addEventListener('click', (e) => {
     // console.log(document.getElementsByClassName(`${e.target.innerText}`));
     console.log(e.target.innerText);
     if(e.target.innerText === "HATS") {
-    let hatsHTML =
-      `
-      <div class="card">
-      <img src="../IMG/Artboard 5@4x.png" class="productIMG" alt="Item Picture" style="width:100%">
-      <h1 class="item-title">Item 1</h1>
-      <p class="price">$19.99</p>
-      <p class="item-desc">Item Description. . . </p>
-      <p><button>Add to Basket</button></p>
-    </div> 
-      `;
+               db.collection("hats").get().then((snapshot) => {
 
-
-       hatsCat.innerHTML = hatsHTML;
-
-       console.log(hatsCat);
+                snapshot.docs.forEach(doc => {
+                  addProduct(doc.data())
+                });
+         });
+       //console.log(hatsCat);
       
         // db.collection("hats").get().then((snapshot) => {
         //   //  console.log(snapshot.docs[0].data())
         // });
     }
+
+    if(e.target.innerText === "TOPS"){
+      db.collection("tops").get().then((snapshot) => {
+
+        snapshot.docs.forEach(doc => {
+          addProduct(doc.data())
+        });
+
+      });
+    };
+
+    
 
 
 });

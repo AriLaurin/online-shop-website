@@ -768,7 +768,7 @@ a.product-buttons:hover{
     padding-top: 1vh;
   }
 
-  .PLgridstyle {
+  .PLgridstyle { /*Make a new grid to fix spacing in product list*/
     display: grid; 
     grid-auto-columns: 1fr; 
     grid-template-columns: 1fr 1fr 1fr 1fr; 
