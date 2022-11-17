@@ -86,10 +86,6 @@ function ProductPage(product){
   document.location.href = "./HTML/products.html";
 };
 
-
-
-let hatsCat = document.getElementById("productContainer");
-
 function productInfo(productID, productType){
   document.location.href = "../HTML/productPage.html"
   console.log(productID);
@@ -108,21 +104,32 @@ function productInfo(productID, productType){
   // })
 }
 
+let hatsCat = document.getElementById("productContainer");
 
-// addEventListener("click", (e) => {
-//   console.log(e.target.parentElement);
-//   console.log(e.target.parentElement.classList[1]);
-//   let productID = e.target.parentElement.children[4].innerHTML;
-//   let productType = e.target.parentElement.classList[1];
-
-//   if(productID !== undefined){
-//     productInfo(productID, productType)
-//   }
-// });
+ addEventListener("click", (e) => {
+   console.log(e.target.parentElement);
+   console.log(e.target.parentElement.classList[1]);
+   let productID = e.target.parentElement.children[4].innerHTML;
+   let productType = e.target.parentElement.classList[1];
+   if(productID !== undefined){
+     productInfo(productID, productType)
+   }
+ });
 const hatClass = document.getElementsByClassName("hats");
 const topsClass = document.getElementsByClassName("tops");
+const pantsClass = document.getElementsByClassName("pants");
+const shoesClass = document.getElementsByClassName("shoes");
+
+let clicks = 0;
+
+function onClick() {
+  clicks += 1;
+  document.getElementById("basketNumber").innerHTML =`${clicks}`
+  document.getElementById("pp-contentCounter").innerHTML =`Total items in basket: ${clicks}`
+};
 
 if(hatClass !== undefined && hatClass !== null) {
+
   const addProduct = (product, doc) => {
     let html = `
     <div class="card ${product.type}")>
@@ -131,7 +138,7 @@ if(hatClass !== undefined && hatClass !== null) {
     <p class="price">£${product.price}</p>
     <p class="item-desc">${product.item_desc}</p>
     <p class=idTag>${doc}</p>
-    <p><button>Add to Basket</button></p>
+    <p><button onclick="onClick()" id="buttonCart">Add to Basket</button></p>
   </div> 
     `
     hatsCat.innerHTML += html;
@@ -140,7 +147,6 @@ if(hatClass !== undefined && hatClass !== null) {
 db.collection("hats").get().then((snapshot) => {
   snapshot.docs.forEach(doc => {
     addProduct(doc.data(),doc.id)
-    console.log("test")
   });
 });
 
@@ -151,8 +157,23 @@ db.collection("tops").get().then((snapshot) => {
   });
 });
 
+db.collection("pants").get().then((snapshot) => {
+  snapshot.docs.forEach(doc => {
+    addProduct(doc.data(),doc.id)
+    // console.log(doc.id)
+  });
+});
+
+db.collection("shoes").get().then((snapshot) => {
+  snapshot.docs.forEach(doc => {
+    addProduct(doc.data(),doc.id)
+    // console.log(doc.id)
+  });
+});
+
 }
 
+//
 addEventListener('click', (e) => {
     // console.log(e.target.parentElement.firstElementChild);
     if (e.target.classList.contains("test23")) {
@@ -181,6 +202,18 @@ addEventListener('click', (e) => {
     if(e.target.innerText === "TOPS"){
       for(let i = 0; i < topsClass.length; i++){
         topsClass[i].classList.toggle("productHidden");
+      }
+    };
+
+    if(e.target.innerText === "PANTS"){
+      for(let i = 0; i < pantsClass.length; i++){
+        pantsClass[i].classList.toggle("productHidden");
+      }
+    };
+
+    if(e.target.innerText === "SHOES"){
+      for(let i = 0; i < shoesClass.length; i++){
+        shoesClass[i].classList.toggle("productHidden");
       }
     };
 

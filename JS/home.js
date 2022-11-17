@@ -89,6 +89,8 @@ function ProductPage(){
   document.location.href = "./HTML/products.html";
 };
 
+
+
 // addEventListener("click", e => {
 //   if (e.target.classList.contains("ProductTitle")) {
 //     console.log(e.target)

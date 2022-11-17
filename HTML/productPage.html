@@ -4,13 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/pdStyles.css">
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="icon" href="../IMG/LLC Logo@4x_1.gif" type="image/gif">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://kit.fontawesome.com/08ca2ffd93.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&display=swap" rel="stylesheet">
+    <title>LLC - Fashion for all</title>
 </head>
 <body>
-    <h1>PRODUCT PAGE</h1>
+    <div class="pdContainer">
+      <div class="pdDetailsL">
+        <a id="returnpageBtn" href="../HTML/products.html">
+          <p id="returnpara"><i class="fa-solid fa-arrow-left-long"></i> Return to products</p>
+      </a>
+      </div>
+      <div class="pdDetailsR">a</div>
+      <div class="pdNavbarL">
+        <hr>
+        <div class="logo"><image id="navbar-logo" src="../IMG/LLLogo@4x.png" alt=""></image></div>
+      </div>
+      <div class="pdNavbarR">
+        <hr>
+      </div>
+      <div class="pdLeft">
 
-    <div id="idtest"></div>
-    <button onclick="testFunction()">click me</button>
+      </div>
+      <div class="pdRight"></div>
+      <div class="pdImage" id="pdImage"></div>
+      <div class="pdDesc" id="pdDesc"></div>
+      <div class="pdFooter"></div>
+    </div>
 
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
@@ -29,7 +53,7 @@
       firebase.initializeApp(config);
       const db = firebase.firestore();  
     </script>
-    <script src="/JS/products.js" defer></script>
-    <script src="/JS/productDetails.js" defer></script>
+    <script src="../JS/products.js" defer></script>
+    <script src="../JS/productDetails.js" defer></script>
 </body>
 </html>

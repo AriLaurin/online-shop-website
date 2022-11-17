@@ -1,0 +1,130 @@
+.pdContainer {
+    display: grid; 
+    grid-template-columns: 0.3fr 2fr 1.5fr 0.3fr; 
+    grid-template-rows: 0.2fr 0.2fr 9.7fr 0.5fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "pdDetailsL pdDetailsL pdDetailsR pdDetailsR"
+      "pdNavbarL pdNavbarL pdNavbarR pdNavbarR"
+      "pdLeft pdImage pdDesc pdRight"
+      "pdFooter pdFooter pdFooter pdFooter"; 
+  }
+  .pdDetailsL {
+    grid-area: pdDetailsL;
+    background: #161925;
+    }
+  .pdDetailsR {
+    grid-area: pdDetailsR;
+    background: #161925;
+    }
+  .pdNavbarL {
+    grid-area: pdNavbarL;
+    background: #161925;
+    }
+  .pdNavbarR {
+    grid-area: pdNavbarR;
+    background: #161925;
+    }
+  .pdImage {
+     grid-area: pdImage;
+     background: #433A3F;
+     }
+  .pdDesc {
+     grid-area: pdDesc;
+     background: #433A3F;
+     }
+  .pdLeft {
+     grid-area: pdLeft;
+     background: #433A3F;
+     }
+  .pdRight {
+     grid-area: pdRight;
+     background: #433A3F;
+     }
+  .pdFooter {
+     grid-area: pdFooter;
+     background: #161925;
+     }
+
+
+     #navbar-logo{
+        grid-area: logo;
+        padding-left:1vw;
+        width:200px;
+        height:53px;
+        padding-bottom: 0.5vw;
+    }
+
+    hr{
+        color: #59C9A5;
+        opacity: 40%;
+      }
+
+      #returnpageBtn{
+        text-decoration: none;
+        color: white;
+        font-family: Alegreya Sans SC;
+      }
+      #returnpageBtn:hover{
+        text-decoration: underline;
+        color: #59C9A5;
+      }
+
+      #returnpara{
+        padding-top: 1.8vh;
+        padding-left: 1vw;
+        max-width: 200px;
+      }
+
+      #pdTitle{
+        color: white;
+        font-family: Alegreya Sans SC;
+        font-size: 50px;
+        
+      }
+
+      #pdPrice{
+        color:#59C9A5;
+        font-family: Alegreya Sans SC;
+        font-size: 25px;
+        
+      }
+
+      #pdItemDesc{
+        padding-top: 5vh;
+        color: white;
+        font-family: Alegreya Sans SC;
+        
+      }
+
+      #pdButton{
+        padding-top: 6vh;
+      }
+
+      button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color:#59C9A5;
+        font-family: Alegreya Sans SC;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 25%;
+        font-size: 18px;
+        border-radius: 10px;
+        
+      }
+
+      button:hover {
+        color:white;
+      }
+
+      #pdImage{
+        padding-top: 2vh;
+      }
+
+      .productIMG{
+        border-radius: 10px;
+        box-shadow: 10px 10px 50px rgb(27, 27, 27);
+      }
