@@ -857,17 +857,17 @@ a.product-buttons:hover{
     user-select: none;
     padding-left: 10vw;
     padding-top:3vh;
-    color: white;
+    color:#59C9A5;
     padding-left: 11.2vw;
     text-align: start;
   }
 
-  .fuckyou:hover{
-    color:#59C9A5;
+  .potet:hover{
+    color:white;
   }
 
   .fcACTIVE{
-    color:#59C9A5 !important;
+    color:white !important;
   }
 
   /* Hide the browser's default checkbox */
@@ -891,7 +891,7 @@ a.product-buttons:hover{
 }
 
 .filtercontainer input:checked{
-  color: #59C9A5;
+  color:white;
 }
 
 /* On mouse-over, add a grey background color */
@@ -901,7 +901,7 @@ a.product-buttons:hover{
 
 /* When the checkbox is checked, add a blue background */
 .filtercontainer input:checked ~ .checkmark {
-  background-color: #59C9A5;
+  background-color:white;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -924,10 +924,20 @@ a.product-buttons:hover{
   transform: rotate(45deg);
 }
 
-.HATS{
-  visibility:visible;
+
+
+.hat{
+  display: block;
 }
 
-.HATSHidden{
-  visibility: hidden;
+.tops{
+  display: block;
+}
+
+.productHidden{
+  display: none;
+}
+
+.idTag{
+  display: none;
 }

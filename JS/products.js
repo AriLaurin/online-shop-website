@@ -55,20 +55,25 @@ function topFunction() {
 let modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-let popbtn = document.getElementById("popbtn");
+let popbtn = "";
+ popbtn = document.getElementById("popbtn");
 
 // Get the <span> element that closes the modal
 let span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
-popbtn.onclick = function() {
-  modal.style.display = "block";
-}
+if(popbtn !== null && span !== null){
+  popbtn.onclick = function() {
+    modal.style.display = "block";
+  }
 
-// When the user clicks on <span> (x), close the modal
+  // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
 }
+
+}
+
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -77,23 +82,75 @@ window.onclick = function(event) {
   }
 };
 
-function ProductPage(){
+function ProductPage(product){
   document.location.href = "./HTML/products.html";
 };
 
+
+
 let hatsCat = document.getElementById("productContainer");
 
-const addProduct = (product) => {
-  let html = `
-  <div class="card">
-  <img src="../IMG/Artboard 5@4x.png" class="productIMG" alt="Item Picture" style="width:100%">
-  <h1 class="item-title">${product.name}</h1>
-  <p class="price">£${product.price}</p>
-  <p class="item-desc">${product.item_desc}</p>
-  <p><button>Add to Basket</button></p>
-</div> 
-  `
-  hatsCat.innerHTML += html;
+function productInfo(productID, productType){
+  document.location.href = "../HTML/productPage.html"
+  console.log(productID);
+  console.log(productType);
+  localStorage.setItem('productType', productType);
+  localStorage.setItem('productID', productID);
+
+  // testFunction();
+
+
+
+
+  // db.collection(productType).get().then((snapshot) => {
+  //   console.log("this works")
+  //   console.log('11', snapshot.docs)
+  // })
+}
+
+
+// addEventListener("click", (e) => {
+//   console.log(e.target.parentElement);
+//   console.log(e.target.parentElement.classList[1]);
+//   let productID = e.target.parentElement.children[4].innerHTML;
+//   let productType = e.target.parentElement.classList[1];
+
+//   if(productID !== undefined){
+//     productInfo(productID, productType)
+//   }
+// });
+const hatClass = document.getElementsByClassName("hats");
+const topsClass = document.getElementsByClassName("tops");
+
+if(hatClass !== undefined && hatClass !== null) {
+  const addProduct = (product, doc) => {
+    let html = `
+    <div class="card ${product.type}")>
+    <img src="../IMG/${product.image}" class="productIMG" alt="Item Picture" style="width:100%">
+    <h1 class="item-title">${product.name}</h1>
+    <p class="price">£${product.price}</p>
+    <p class="item-desc">${product.item_desc}</p>
+    <p class=idTag>${doc}</p>
+    <p><button>Add to Basket</button></p>
+  </div> 
+    `
+    hatsCat.innerHTML += html;
+  }
+  
+db.collection("hats").get().then((snapshot) => {
+  snapshot.docs.forEach(doc => {
+    addProduct(doc.data(),doc.id)
+    console.log("test")
+  });
+});
+
+db.collection("tops").get().then((snapshot) => {
+  snapshot.docs.forEach(doc => {
+    addProduct(doc.data(),doc.id)
+    // console.log(doc.id)
+  });
+});
+
 }
 
 addEventListener('click', (e) => {
@@ -104,14 +161,16 @@ addEventListener('click', (e) => {
     }
     // console.log(document.getElementsByClassName("HATS"));
     // console.log(document.getElementsByClassName(`${e.target.innerText}`));
-    console.log(e.target.innerText);
+    // console.log(e.target.innerText);
     if(e.target.innerText === "HATS") {
-               db.collection("hats").get().then((snapshot) => {
+      for(let i = 0; i < hatClass.length; i++){
+        hatClass[i].classList.toggle("productHidden");
+      }
+      // hatClass.forEach(addClass => {
+      //   addClass.add("hatHidden");
+      // })
 
-                snapshot.docs.forEach(doc => {
-                  addProduct(doc.data())
-                });
-         });
+
        //console.log(hatsCat);
       
         // db.collection("hats").get().then((snapshot) => {
@@ -120,13 +179,9 @@ addEventListener('click', (e) => {
     }
 
     if(e.target.innerText === "TOPS"){
-      db.collection("tops").get().then((snapshot) => {
-
-        snapshot.docs.forEach(doc => {
-          addProduct(doc.data())
-        });
-
-      });
+      for(let i = 0; i < topsClass.length; i++){
+        topsClass[i].classList.toggle("productHidden");
+      }
     };
 
     
@@ -151,12 +206,12 @@ for(let i of categoryTitle) {
 
   i.addEventListener("click", () => {
 
-    // console.log("this is clicked", i.textContent.toLowerCase());
+    console.log("this is clicked", i.textContent.toLowerCase());
     chosenElement = i.textContent.toLowerCase();
   })
 
 function getProduct(){
-  console.log("wee")
+  // console.log("wee")
   // const categoryTitle = document.querySelector("#ProductTitle").firstChild.data.toLowerCase();
 
   // console.log(i.textContent);
@@ -170,17 +225,17 @@ function getProduct(){
       // console.log(chosenElement)
       console.log(doc.data().name);
       console.log(doc.id);
-      // if(doc.data().name === chosenElement){
-      //   // console.log(doc.id);
-      //   console.log(`this is ${chosenElement}`);
-      //    docID = doc.id;
-    // }
+      if(doc.data().name === chosenElement){
+        // console.log(doc.id);
+        console.log(`this is ${chosenElement}`);
+         docID = doc.id;
+    }
 
 
 
 });
 // console.log(docID);
-// banan(docID);
+banan(docID);
 
   })}};
 
