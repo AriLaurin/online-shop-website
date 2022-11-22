@@ -106,15 +106,34 @@ function productInfo(productID, productType){
 
 let hatsCat = document.getElementById("productContainer");
 
- addEventListener("click", (e) => {
+ hatsCat.addEventListener("click", (e) => {
    console.log(e.target.parentElement);
-   console.log(e.target.parentElement.classList[1]);
+    console.log(e.target.parentElement.classList[1]);
    let productID = e.target.parentElement.children[4].innerHTML;
    let productType = e.target.parentElement.classList[1];
+  let idTag = document.querySelector(".idTag").innerHTML;
+  //  let iconClass = document.getElementsByClassName("icon").contains("icon");
+// console.log(idTag);
+
+  // if(idTag){
+  //   console.log("this is true");
+  // }
+
    if(productID !== undefined){
      productInfo(productID, productType)
    }
  });
+
+// function ClickCard(){
+//   let cardID = document.getElementsByClassName("card");
+//   // let cardID2 = document.getElementsByClassName("card")[1].children[4].innerHTML;
+//   console.log(cardID, cardID2);
+
+//   for(let i of cardID){
+
+//   }
+// }
+
 const hatClass = document.getElementsByClassName("hats");
 const topsClass = document.getElementsByClassName("tops");
 const pantsClass = document.getElementsByClassName("pants");
@@ -132,7 +151,7 @@ if(hatClass !== undefined && hatClass !== null) {
 
   const addProduct = (product, doc) => {
     let html = `
-    <div class="card ${product.type}")>
+    <div class="card ${product.type}" onclick="ClickCard()" id="cardID">
     <img src="../IMG/${product.image}" class="productIMG" alt="Item Picture" style="width:100%">
     <h1 class="item-title">${product.name}</h1>
     <p class="price">£${product.price}</p>
