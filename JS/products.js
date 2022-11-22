@@ -107,11 +107,11 @@ function productInfo(productID, productType){
 let hatsCat = document.getElementById("productContainer");
 
  hatsCat.addEventListener("click", (e) => {
-   console.log(e.target.parentElement);
-    console.log(e.target.parentElement.classList[1]);
+  //  console.log(e.target.parentElement);
+    // console.log(e.target.parentElement.classList[1]);
    let productID = e.target.parentElement.children[4].innerHTML;
    let productType = e.target.parentElement.classList[1];
-  let idTag = document.querySelector(".idTag").innerHTML;
+  // let idTag = document.querySelector(".idTag").innerHTML;
   //  let iconClass = document.getElementsByClassName("icon").contains("icon");
 // console.log(idTag);
 
@@ -139,12 +139,15 @@ const topsClass = document.getElementsByClassName("tops");
 const pantsClass = document.getElementsByClassName("pants");
 const shoesClass = document.getElementsByClassName("shoes");
 
+
 let clicks = 0;
 
 function onClick() {
   clicks += 1;
-  document.getElementById("basketNumber").innerHTML =`${clicks}`
-  document.getElementById("pp-contentCounter").innerHTML =`Total items in basket: ${clicks}`
+  document.getElementById("basketNumber").innerHTML =`<h1>${clicks}</h1>`;
+  document.getElementById("pp-contentCounter").innerHTML =`Total items in basket: ${clicks}`;
+
+  console.log();
 };
 
 if(hatClass !== undefined && hatClass !== null) {
@@ -157,12 +160,35 @@ if(hatClass !== undefined && hatClass !== null) {
     <p class="price">£${product.price}</p>
     <p class="item-desc">${product.item_desc}</p>
     <p class=idTag>${doc}</p>
-    <p><button onclick="onClick()" id="buttonCart">Add to Basket</button></p>
+    <p><button onclick="onClick();" id="buttonCart" class="ButtonCart">Add to Basket</button></p>
   </div> 
     `
     hatsCat.innerHTML += html;
+
+// buttonCart.innerHTML = `Added to basket`;
+
+
   }
+  // function CartUpdate(){
+
   
+  //   // for(let i of buttonCart){
+      
+  //   // }
+  // }
+
+  // let buttonCart = document.getElementsByClassName("ButtonCart");
+
+
+  addEventListener("click", e => {
+    if (e.target.classList.contains("ButtonCart")) {
+      console.log(e.target);
+      e.target.textContent = "ADDED";
+      e.target.disabled = true;
+  
+    }
+  });
+
 db.collection("hats").get().then((snapshot) => {
   snapshot.docs.forEach(doc => {
     addProduct(doc.data(),doc.id)
