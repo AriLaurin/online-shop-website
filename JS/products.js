@@ -141,14 +141,63 @@ const shoesClass = document.getElementsByClassName("shoes");
 
 
 let clicks = 0;
+let nuclearButton = document.getElementsByClassName("ButtonCart");
+
+addEventListener("click", e => {
+  if (e.target.classList.contains("ButtonCart")) {
+    itemID = (e.target.parentElement.parentElement.children[4].textContent);
+    e.target.textContent = "ADDED";
+    e.target.disabled = true;
+    
+    searchCategories.forEach(cat => {
+      db.collection(cat).doc(itemID).get().then((snapshot) => {
+        productBasket(snapshot.data(), itemID);
+        }).catch(err => {
+          return;
+      })
+    });
+
+    // db.collection("hats").get().then((snapshot) => {
+    //   snapshot.docs.forEach(doc => {
+    //     addProduct(doc.data(),doc.id)
+    //   });
+    // });
+
+
+  }
+});
 
 function onClick() {
   clicks += 1;
-  document.getElementById("basketNumber").innerHTML =`<h1>${clicks}</h1>`;
-  document.getElementById("pp-contentCounter").innerHTML =`Total items in basket: ${clicks}`;
+  const nuclearEmpty = document.getElementById("pp-contentCounter");
 
-  console.log();
+  nuclearEmpty.classList.toggle("productHidden");
+  document.getElementById("basketNumber").innerHTML =`<h1>${clicks}</h1>`;
+  // document.getElementById("pp-contentCounter").innerHTML =`Total items in basket: ${clicks}`;
+
+  // console.log();
+  // db.collection("hats").get().then((snapshot) => {
+  //   snapshot.docs.forEach(doc => {
+  //     productBasket(doc.data(),doc.id)
+  //   });
+  // });
 };
+
+const searchCategories = ["hats","tops","pants","shoes"];
+
+const productBasket = (product, doc) => {
+  let html = `
+  <div>
+  <p class="PBitems">${product.name}</p>  <p>[£${product.price}]</p>
+  </div>
+  `
+  document.getElementById("pp-contentCounter").innerHTML += html;
+}
+
+
+// const searchTxt = document.getElementById("searchTxt").value
+// list.innerHTML = ""
+
 
 if(hatClass !== undefined && hatClass !== null) {
 
@@ -180,14 +229,14 @@ if(hatClass !== undefined && hatClass !== null) {
   // let buttonCart = document.getElementsByClassName("ButtonCart");
 
 
-  addEventListener("click", e => {
-    if (e.target.classList.contains("ButtonCart")) {
-      console.log(e.target);
-      e.target.textContent = "ADDED";
-      e.target.disabled = true;
+  // addEventListener("click", e => {
+  //   if (e.target.classList.contains("ButtonCart")) {
+  //     console.log(e.target);
+  //     e.target.textContent = "ADDED";
+  //     e.target.disabled = true;
   
-    }
-  });
+  //   }
+  // });
 
 db.collection("hats").get().then((snapshot) => {
   snapshot.docs.forEach(doc => {

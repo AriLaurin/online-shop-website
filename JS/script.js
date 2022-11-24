@@ -183,7 +183,6 @@ snapshot.docs.forEach(doc => { //gets all the docs
 
 
 
-
 // when we have the data
 }).catch((err) => {
  console.log(err)

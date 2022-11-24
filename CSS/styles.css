@@ -949,3 +949,11 @@ a.product-buttons:hover{
   font-family: Alegreya Sans SC;
   color: #59C9A5;
 }
+
+.PBitems{
+  color:#59C9A5;
+}
+
+.pp-contentCounter{
+  display: block;
+}
