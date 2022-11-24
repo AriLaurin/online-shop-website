@@ -188,9 +188,3 @@ snapshot.docs.forEach(doc => { //gets all the docs
  console.log(err)
 });
 }
-
-//if(userStatus = sessionStorage.getItem("status", true)){
- // navbarButton1[0].classList.add("loggedIn")
-//} else {
- // navbarButton1[0].classList.remove("loggedIn")
-//}
