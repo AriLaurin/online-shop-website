@@ -171,7 +171,7 @@ function onClick() {
   clicks += 1;
   const nuclearEmpty = document.getElementById("pp-contentCounter");
 
-  nuclearEmpty.classList.toggle("productHidden");
+  nuclearEmpty.classList.add("productHidden");
   document.getElementById("basketNumber").innerHTML =`<h1>${clicks}</h1>`;
   // document.getElementById("pp-contentCounter").innerHTML =`Total items in basket: ${clicks}`;
 
@@ -187,11 +187,14 @@ const searchCategories = ["hats","tops","pants","shoes"];
 
 const productBasket = (product, doc) => {
   let html = `
-  <div>
-  <p class="PBitems">${product.name}</p>  <p>[£${product.price}]</p>
+  <div class="PBContainer">
+  <div class="PBbox">
+  <p>X</p>
+  <p class="PBitems">${product.name}</p>  <p class="PBprice">[£${product.price}]</p>
+  </div>
   </div>
   `
-  document.getElementById("pp-contentCounter").innerHTML += html;
+  document.getElementById("pp-product").innerHTML += html;
 }
 
 

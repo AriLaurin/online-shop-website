@@ -952,8 +952,30 @@ a.product-buttons:hover{
 
 .PBitems{
   color:#59C9A5;
+  font-family: Alegreya Sans SC;
+  font-size: 20px;
 }
+
 
 .pp-contentCounter{
   display: block;
+}
+
+.PBprice{
+  color: white;
+  font-family: Alegreya Sans SC;
+  font-size: 20px;
+}
+
+.PBbox{
+  padding: 0.5em;
+  /* box-shadow: 3px 3px 5px #59C9A5; */
+  border-style: solid;
+  border-color: #59C9A5;
+  border-width: 5px;
+}
+
+.PBContainer{
+  width: 20vw;
+  margin: 10px;
 }
