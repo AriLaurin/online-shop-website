@@ -187,9 +187,9 @@ const searchCategories = ["hats","tops","pants","shoes"];
 
 const productBasket = (product, doc) => {
   let html = `
-  <div class="PBContainer">
+  <div id="PBContainer" class="PBContainer">
   <div class="PBbox">
-  <p>X</p>
+  <p class="PBX"><i class="fa-solid fa-trash"></i></p> 
   <p class="PBitems">${product.name}</p>  <p class="PBprice">[£${product.price}]</p>
   </div>
   </div>
@@ -200,6 +200,26 @@ const productBasket = (product, doc) => {
 
 // const searchTxt = document.getElementById("searchTxt").value
 // list.innerHTML = ""
+
+const PBList = document.getElementById("popup-center");
+
+PBList.addEventListener("click", e => {
+  if(e.target.parentElement.parentElement.classList.contains("PBbox")){
+    clicks--;
+    document.getElementById("basketNumber").innerHTML =`<h1>${clicks}</h1>`;
+    e.target.parentElement.parentElement.classList.add("productHidden");
+  }
+});
+
+// function delPB(){
+//   const PBContainer = document.getElementsByClassName("PBContainer");
+
+//   console.log(PBContainer);
+//   PBContainer.classList.add("productHidden");
+// };
+
+
+
 
 
 if(hatClass !== undefined && hatClass !== null) {
@@ -274,8 +294,9 @@ db.collection("shoes").get().then((snapshot) => {
 addEventListener('click', (e) => {
     // console.log(e.target.parentElement.firstElementChild);
     if (e.target.classList.contains("test23")) {
-        e.target.parentElement.firstElementChild.classList.toggle("fcACTIVE");
-        e.target.parentElement.lastElementChild.classList.toggle("fcACTIVE");
+      e.target.classList.toggle("fcACTIVE");
+        // e.target.parentElement.firstElementChild.classList.toggle("fcACTIVE");
+        // e.target.parentElement.lastElementChild.classList.toggle("fcACTIVE");
     }
     // console.log(document.getElementsByClassName("HATS"));
     // console.log(document.getElementsByClassName(`${e.target.innerText}`));
@@ -373,4 +394,20 @@ banan(docID);
     console.log(docID)
 
   }
+
+  //* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+} 
 
