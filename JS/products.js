@@ -208,6 +208,7 @@ PBList.addEventListener("click", e => {
     clicks--;
     document.getElementById("basketNumber").innerHTML =`<h1>${clicks}</h1>`;
     e.target.parentElement.parentElement.classList.add("productHidden");
+
   }
 });
 
