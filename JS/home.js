@@ -142,3 +142,27 @@ function getProduct(){
     console.log(docID)
 
   }
+
+  addEventListener("click", e => {
+    if (e.target.classList.contains("ButtonCart")) {
+      itemID = (e.target.parentElement.parentElement.children[4].textContent);
+      e.target.textContent = "ADDED";
+      e.target.disabled = true;
+      
+      searchCategories.forEach(cat => {
+        db.collection(cat).doc(itemID).get().then((snapshot) => {
+          productBasket(snapshot.data(), itemID);
+          }).catch(err => {
+            return;
+        })
+      });
+  
+      // db.collection("hats").get().then((snapshot) => {
+      //   snapshot.docs.forEach(doc => {
+      //     addProduct(doc.data(),doc.id)
+      //   });
+      // });
+  
+  
+    }
+  });
