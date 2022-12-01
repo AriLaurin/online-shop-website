@@ -227,7 +227,7 @@ if(hatClass !== undefined && hatClass !== null) {
 
   const addProduct = (product, doc) => {
     let html = `
-    <div class="card ${product.type}" onclick="ClickCard()" id="cardID">
+    <div class="card ${product.type}"  id="cardID">
     <img src="../IMG/${product.image}" class="productIMG" alt="Item Picture" style="width:100%">
     <h1 class="item-title">${product.name}</h1>
     <p class="price">£${product.price}</p>

@@ -2,28 +2,38 @@ let foundProduct = false;
 const descBox = document.getElementById("pdDesc");
 const pdImage = document.getElementById("pdImage");
 window.onload = testFunction();
+var warProduct;
+var warPrice;
 
 let divTest = document.getElementById("idtest");
+const ppProduct = document.getElementById("pp-product");
+// console.log(ppProduct);
 
 function testFunction() {
   let productType = localStorage.getItem("productType");
   let productID = localStorage.getItem("productID");
-  console.log("Product Type: ", productType);
-//   console.log("Product ID: ", productID);
-//   console.log("what is happening");
+  // console.log("Product Type: ", productType);
+  // console.log("Product ID: ", productID);
+  // console.log("what is happening");
 
+
+
+
+setTimeout(() => {
+  console.log(warProduct);
+},1000)
 
   db.collection(productType)
     .get()
     .then((snapshot) => {
       snapshot.docs.forEach((doc) => {
         if (!foundProduct) { //
-          console.log("Product ID: ",doc.id);
-          console.log("Specific product: ",doc.data().name);
+          // console.log("Product ID: ",doc.id);
+          // console.log("Specific product: ",doc.data().name);
           if (doc.id === productID) {
            let html =  descBox.innerHTML +=
             `
-            <p id="pdTitle">${doc.data().name} </p>
+            <p id="pdTitle">${doc.data().name}</p>
             <hr>
             <p id="pdPrice">£${doc.data().price}</p>
             <p id="pdItemDesc">${doc.data().item_desc}</p>
@@ -32,6 +42,8 @@ function testFunction() {
             // console.log("when is weekend");
             divTest += html;
 
+            warProduct = doc.data().name;
+            warPrice = doc.data().price;
             let htmlImage = pdImage.innerHTML += 
             `
             <img src="../IMG/${doc.data().image}" class="productIMG" alt="Item Picture" style="width:75%">
@@ -75,29 +87,7 @@ window.onclick = function(event) {
   }
 };
 
-addEventListener("click", e => {
-  if (e.target.classList.contains("ButtonCart")) {
-    itemID = (e.target.parentElement.parentElement.children[4].textContent);
-    e.target.textContent = "ADDED";
-    e.target.disabled = true;
-    
-    searchCategories.forEach(cat => {
-      db.collection(cat).doc(itemID).get().then((snapshot) => {
-        productBasket(snapshot.data(), itemID);
-        }).catch(err => {
-          return;
-      })
-    });
 
-    // db.collection("hats").get().then((snapshot) => {
-    //   snapshot.docs.forEach(doc => {
-    //     addProduct(doc.data(),doc.id)
-    //   });
-    // });
-
-
-  }
-});
 let clicks = 0;
 
 function onClick() {
@@ -130,5 +120,41 @@ const productBasket = (product, doc) => {
   document.getElementById("pp-product").innerHTML += html;
 }
 
+addEventListener("click", e => {
+  if (e.target.classList.contains("ButtonCart")) {
+    itemID = (e.target.parentElement.parentElement.children[4].textContent);
+    e.target.textContent = "ADDED";
+    e.target.disabled = true;
+    
+    // console.log(ppProduct);
+    let html = `
+    <div id="PBContainer" class="PBContainer">
+    <div class="PBbox">
+    <p class="PBX"><i class="fa-solid fa-trash"></i></p> 
+    <p class="PBitems">${warProduct}</p>  <p class="PBprice">[£${warPrice}]</p>
+    </div>
+    </div>
+    `
+
+    ppProduct.innerHTML = html;
+
+    // db.collection("hats").get().then((snapshot) => {
+    //   snapshot.docs.forEach(doc => {
+    //     addProduct(doc.data(),doc.id)
+    //   });
+    // });
 
 
+  }
+
+  const PBList = document.getElementById("popup-center");
+
+PBList.addEventListener("click", e => {
+  if(e.target.parentElement.parentElement.classList.contains("PBbox")){
+    clicks = 0;
+    document.getElementById("basketNumber").innerHTML =`<h1>${clicks}</h1>`;
+    e.target.parentElement.parentElement.classList.add("productHidden");
+
+  }
+});
+});
