@@ -843,28 +843,12 @@ a.product-buttons:hover{
     padding-left: 1.4vw;
   }
 
-  .filtercontainer {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-family: Alegreya Sans SC;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    padding-left: 10vw;
-    padding-top:3vh;
-    color:#59C9A5;
-    padding-left: 11.2vw;
-    text-align: start;
-  }
+
 
   .potet:hover{
     color:white;
   }
+
 
   .fcACTIVE{
     color:white !important;
@@ -885,9 +869,21 @@ a.product-buttons:hover{
   display: inline;
 }
 
-.fuckyou {
-  display: inline;
-  margin-left: 5px;
+.potet{
+justify-self: start;
+text-align: start;
+padding: 5px;
+padding-left: 1vw;
+font-family: Alegreya Sans SC;
+font-size: 20px;
+transition: ease 0.5s;
+}
+
+.potet:hover{
+  width: 100%;
+  cursor: pointer;
+  background:#161925;
+  font-size: 25px;
 }
 
 .filtercontainer input:checked{
@@ -948,4 +944,93 @@ a.product-buttons:hover{
   padding-left: 1.5vw;
   font-family: Alegreya Sans SC;
   color: #59C9A5;
+}
+
+.PBitems{
+  color:white;
+  font-family: Alegreya Sans SC;
+  font-size: 20px;
+}
+
+
+.pp-contentCounter{
+  display: block;
+}
+
+.PBprice{
+  color:#59C9A5;
+  font-family: Alegreya Sans SC;
+  font-size: 20px;
+}
+
+.PBbox{
+  padding: 0.5em;
+  /* box-shadow: 3px 3px 5px #59C9A5; */
+  border-style: solid;
+  border-color: #59C9A5;
+  border-width: 5px;
+}
+
+.PBContainer{
+  width: 20vw;
+  margin: 10px;
+}
+
+.PBX{
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  padding-top: 1vh;
+  padding-right: 1vw;
+  font-family: Alegreya Sans SC;
+}
+
+.PBX:hover{
+  color: #59C9A5;
+  cursor: pointer;
+}
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color:white;
+  font-family: Alegreya Sans SC;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color:#59C9A5;
+  background: #161925;
+}
+
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
 }

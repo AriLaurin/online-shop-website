@@ -141,20 +141,93 @@ const shoesClass = document.getElementsByClassName("shoes");
 
 
 let clicks = 0;
+let nuclearButton = document.getElementsByClassName("ButtonCart");
+
+addEventListener("click", e => {
+  if (e.target.classList.contains("ButtonCart")) {
+    itemID = (e.target.parentElement.parentElement.children[4].textContent);
+    e.target.textContent = "ADDED";
+    e.target.disabled = true;
+    
+    searchCategories.forEach(cat => {
+      db.collection(cat).doc(itemID).get().then((snapshot) => {
+        productBasket(snapshot.data(), itemID);
+        }).catch(err => {
+          return;
+      })
+    });
+
+    // db.collection("hats").get().then((snapshot) => {
+    //   snapshot.docs.forEach(doc => {
+    //     addProduct(doc.data(),doc.id)
+    //   });
+    // });
+
+
+  }
+});
 
 function onClick() {
   clicks += 1;
-  document.getElementById("basketNumber").innerHTML =`<h1>${clicks}</h1>`;
-  document.getElementById("pp-contentCounter").innerHTML =`Total items in basket: ${clicks}`;
+  const nuclearEmpty = document.getElementById("pp-contentCounter");
 
-  console.log();
+  nuclearEmpty.classList.add("productHidden");
+  document.getElementById("basketNumber").innerHTML =`<h1>${clicks}</h1>`;
+  // document.getElementById("pp-contentCounter").innerHTML =`Total items in basket: ${clicks}`;
+
+  // console.log();
+  // db.collection("hats").get().then((snapshot) => {
+  //   snapshot.docs.forEach(doc => {
+  //     productBasket(doc.data(),doc.id)
+  //   });
+  // });
 };
+
+const searchCategories = ["hats","tops","pants","shoes"];
+
+const productBasket = (product, doc) => {
+  let html = `
+  <div id="PBContainer" class="PBContainer">
+  <div class="PBbox">
+  <p class="PBX"><i class="fa-solid fa-trash"></i></p> 
+  <p class="PBitems">${product.name}</p>  <p class="PBprice">[£${product.price}]</p>
+  </div>
+  </div>
+  `
+  document.getElementById("pp-product").innerHTML += html;
+}
+
+
+// const searchTxt = document.getElementById("searchTxt").value
+// list.innerHTML = ""
+
+const PBList = document.getElementById("popup-center");
+
+PBList.addEventListener("click", e => {
+  if(e.target.parentElement.parentElement.classList.contains("PBbox")){
+    clicks--;
+    document.getElementById("basketNumber").innerHTML =`<h1>${clicks}</h1>`;
+    e.target.parentElement.parentElement.classList.add("productHidden");
+
+  }
+});
+
+// function delPB(){
+//   const PBContainer = document.getElementsByClassName("PBContainer");
+
+//   console.log(PBContainer);
+//   PBContainer.classList.add("productHidden");
+// };
+
+
+
+
 
 if(hatClass !== undefined && hatClass !== null) {
 
   const addProduct = (product, doc) => {
     let html = `
-    <div class="card ${product.type}" onclick="ClickCard()" id="cardID">
+    <div class="card ${product.type}"  id="cardID">
     <img src="../IMG/${product.image}" class="productIMG" alt="Item Picture" style="width:100%">
     <h1 class="item-title">${product.name}</h1>
     <p class="price">£${product.price}</p>
@@ -180,14 +253,14 @@ if(hatClass !== undefined && hatClass !== null) {
   // let buttonCart = document.getElementsByClassName("ButtonCart");
 
 
-  addEventListener("click", e => {
-    if (e.target.classList.contains("ButtonCart")) {
-      console.log(e.target);
-      e.target.textContent = "ADDED";
-      e.target.disabled = true;
+  // addEventListener("click", e => {
+  //   if (e.target.classList.contains("ButtonCart")) {
+  //     console.log(e.target);
+  //     e.target.textContent = "ADDED";
+  //     e.target.disabled = true;
   
-    }
-  });
+  //   }
+  // });
 
 db.collection("hats").get().then((snapshot) => {
   snapshot.docs.forEach(doc => {
@@ -222,8 +295,9 @@ db.collection("shoes").get().then((snapshot) => {
 addEventListener('click', (e) => {
     // console.log(e.target.parentElement.firstElementChild);
     if (e.target.classList.contains("test23")) {
-        e.target.parentElement.firstElementChild.classList.toggle("fcACTIVE");
-        e.target.parentElement.lastElementChild.classList.toggle("fcACTIVE");
+      e.target.classList.toggle("fcACTIVE");
+        // e.target.parentElement.firstElementChild.classList.toggle("fcACTIVE");
+        // e.target.parentElement.lastElementChild.classList.toggle("fcACTIVE");
     }
     // console.log(document.getElementsByClassName("HATS"));
     // console.log(document.getElementsByClassName(`${e.target.innerText}`));
@@ -321,4 +395,20 @@ banan(docID);
     console.log(docID)
 
   }
+
+  //* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+} 
 
