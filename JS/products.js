@@ -221,8 +221,6 @@ PBList.addEventListener("click", e => {
 
 
 
-
-
 if(hatClass !== undefined && hatClass !== null) {
 
   const addProduct = (product, doc) => {

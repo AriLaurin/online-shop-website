@@ -847,8 +847,18 @@ a.product-buttons:hover{
 
   .potet:hover{
     color:white;
+    font-size: 2em;
   }
 
+  .filtercontainer{
+    transition-duration: 0.1s;
+  }
+
+  .filtercontainer:active{
+    transition-duration: 0.1s;
+    transform-origin: left;
+    transform: scale(0.9);
+  }
 
   .fcACTIVE{
     color:white !important;
