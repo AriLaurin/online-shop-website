@@ -4,20 +4,38 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../CSS/styles.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/08ca2ffd93.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&display=swap" rel="stylesheet">
+    
+        <link rel="icon" href="../IMG/LLC Logo@4x_1.gif" type="image/gif">
+        <title>LLC - Fashion for all</title>
   </head>
   <body>
-    <form class="login-form" autocomplete="off">
-      <input type="text" id="usernameActual" placeholder="Username" />
-      <input type="text" id="passwordActual" placeholder="Password" />
-      <button onclick="Login()">Login</button>
-      <input type="checkbox" onclick="HidePass()" />Toggle Password Visibility
-      <div class="PasswordResult"></div>
-    </form>
-    <a href="newaccount.html">
-      <p>Make a new account?</p>
-    </a>
+
+    <div class="container">
+      <div class="toptext">
+        <h1 id="title">Login</h1>
+      </div>
+      <div class="center">
+        <form class="login-form" autocomplete="off">
+          <input type="text" id="usernameActual" placeholder="Username" />
+          <input type="password" id="passwordActual" placeholder="Password" />
+          <button onclick="Login()" id="button">Login</button>
+          <input type="checkbox" onclick="HidePass()" /><span id="title2">Toggle Password</span>
+          <div class="PasswordResult"></div>
+          <a href="newaccount.html">
+            <p>Make a new account?</p>
+          </a>
+        </form>
+
+      </div>
+    </div>
+    
+
 
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>

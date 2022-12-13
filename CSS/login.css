@@ -25,7 +25,7 @@
     margin-bottom: 40px;
   }
   form{
-    width: 360px;
+    width:35%;
     margin: 0 auto;
     padding: 30px;
     box-shadow: 1px 2px 3px rgba(0,0,0,0.1);
@@ -59,7 +59,6 @@
     letter-spacing: 2px;
   }
 
-
   #title{
     color: white;
     font-family: Alegreya Sans SC;
@@ -87,4 +86,20 @@
     display: grid;
     grid-auto-flow: row;
     white-space:nowrap;
+  }
+
+  .PasswordResult{
+    padding-top: 1em;
+    color: white;
+    font-family: Alegreya Sans SC;
+  }
+
+  a{
+    padding: 1em;
+    color: #59C9A5;
+    font-family: Alegreya Sans SC;
+  }
+
+  #button{
+    margin: 1em;
   }
