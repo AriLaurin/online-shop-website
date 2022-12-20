@@ -81,11 +81,27 @@ function check_form() {
     
         // const now = new Date();
     
+        // i would encrypt information here but i cant
         const accountInfo = { //object
             username: AccountName,
             password: password, //gets the form that we are grabbing info from, which will be put in the recipe document and grab its value
             // created_at: firebase.firestore.Timestamp.fromDate(now) // custom firebase timestamp object
+            usertype: "kunde"
         };
+
+        let banan = {
+          name: "eple"
+        };
+
+        let banan2 = JSON.stringify(banan);
+
+        axios.post('/userCredentials', banan2)
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     
         db.collection("nybruker").add(accountInfo).then(() => { //async method which will execute the recipe object
             console.log("account added"); //dev side stuff
@@ -149,6 +165,7 @@ db.collection("nybruker").get().then((snapshot) => {//gets the specific collecti
 snapshot.docs.forEach(doc => { //gets all the docs
   let DataUsername = doc.data().username;
   let DataPassword = doc.data().password;
+  let DataUsertype = doc.data().usertype;
   console.log(DataPassword, LoginPass == DataPassword, LoginPass, DataPassword);
   console.log(DataUsername, LoginUsername == DataUsername);
   if (
@@ -160,14 +177,19 @@ snapshot.docs.forEach(doc => { //gets all the docs
     // localStorage.setItem('status', true);
 
     isLoggedIn = true;
-
+    
     feedback.textContent =
       "You are logged in! Redirecting you to home page. . .";
 
+      if(DataUsertype === "admin"){
+        document.location.href = "../HTML/adminpanel.html";
+      }else{
+        setTimeout(function () {
+          document.location.href = "../index.html";
+        }, 3000);
+      }
 
-    setTimeout(function () {
-      document.location.href = "../index.html";
-    }, 3000);
+
     // }else if(LoginPass != localStorage.getItem("password")){
     //   feedback.textContent = "Invalid account"
     
