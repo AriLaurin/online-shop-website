@@ -167,3 +167,26 @@ function getProduct(){
     }
   });
 
+const searchBox = document.getElementById("input-search");
+
+console.log(searchBox);
+
+function itemSearch() {
+  if (document.getElementById("output") == null) {
+  const searchTxt = searchBox.value
+  localStorage.setItem("redirectSearch", searchTxt);
+  document.location.href = "/HTML/products.html";
+  }
+  else {
+      return
+  }
+
+}
+
+searchBox.addEventListener("keydown", function (e) {
+  if (e.key == "Enter") {
+      itemSearch();
+  }
+});
+
+

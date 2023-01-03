@@ -260,31 +260,59 @@ if(hatClass !== undefined && hatClass !== null) {
   //   }
   // });
 
-db.collection("hats").get().then((snapshot) => {
-  snapshot.docs.forEach(doc => {
-    addProduct(doc.data(),doc.id)
-  });
-});
 
-db.collection("tops").get().then((snapshot) => {
-  snapshot.docs.forEach(doc => {
-    addProduct(doc.data(),doc.id)
-    // console.log(doc.id)
-  });
-});
+// const searchCategories = ["hats","pants","shoes","tops"];
 
-db.collection("pants").get().then((snapshot) => {
-  snapshot.docs.forEach(doc => {
-    addProduct(doc.data(),doc.id)
-    // console.log(doc.id)
-  });
-});
+redirectSearchText = localStorage.redirectSearch;
 
-db.collection("shoes").get().then((snapshot) => {
-  snapshot.docs.forEach(doc => {
-    addProduct(doc.data(),doc.id)
-    // console.log(doc.id)
+if ( redirectSearchText == "") {
+
+  searchCategories.forEach(cat => {
+    db.collection(cat).get().then((snapshot) => {
+      snapshot.docs.forEach(doc => {
+          addProduct(doc.data(), doc.id, cat);
+      }
+      );
+  }).catch(err => {
+      console.log(err)
   });
+  })
+
+}
+else {
+  searchCategories.forEach(cat => {
+    db.collection(cat).get().then((snapshot) => {
+      snapshot.docs.forEach(doc => {
+        if (doc.data().name.toLowerCase().includes(redirectSearchText.toLowerCase())) {
+          addProduct(doc.data(), doc.id);
+        }
+      });
+      })
+  });
+}
+localStorage.redirectSearch = "";
+
+    const searchBox = document.getElementById("input-search");
+
+function itemSearch() {
+  const searchTxt = searchBox.value
+  hatsCat.innerHTML = ""
+  searchCategories.forEach(cat => {
+    db.collection(cat).get().then((snapshot) => {
+      snapshot.docs.forEach(doc => {
+        if (doc.data().name.toLowerCase().includes(searchTxt.toLowerCase()))
+          addProduct(doc.data(), doc.id);
+        else return
+      });
+      })
+  });
+
+}
+
+searchBox.addEventListener("keydown", function (e) {
+  if (e.key == "Enter") {
+      itemSearch();
+  }
 });
 
 }
@@ -334,7 +362,7 @@ addEventListener('click', (e) => {
       }
     };
 
-    
+
 
 
 });
@@ -409,4 +437,6 @@ for (i = 0; i < dropdown.length; i++) {
     }
   });
 } 
+
+
 
