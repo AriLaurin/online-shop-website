@@ -41,6 +41,11 @@ app.get("/HTML/adminpanel.html", (req,res) => { //get request to the root
    res.sendFile("/HTML/adminpanel.html", {root:__dirname});  
 });
 
+app.get("/HTML/FAQ.html", (req,res) => { //get request to the root
+   res.sendFile("/HTML/FAQ.html", {root:__dirname});  
+});
+
+
 app.listen(port, () => {
     console.log(`Now listening on port ${port}`);
 });

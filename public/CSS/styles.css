@@ -752,6 +752,7 @@ a.product-buttons:hover{
     text-decoration: none;
     font-family: Alegreya Sans SC;
     justify-items: center;
+    cursor: pointer;
   }
 
   #POT{
